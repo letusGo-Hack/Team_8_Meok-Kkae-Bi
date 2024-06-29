@@ -13,11 +13,19 @@ struct DetailMenuView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
+            
             GeometryReader { geometry in
                 VStack {
                     HStack {
-                        Text(viewStore.state.menu)
+                        Spacer().frame(width: 24)
+                        
+                        Text(viewStore.menu.name)
+                            .font(.system(size: 30, weight: .bold))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                        
                         Spacer()
+                        
                         Button(action: {
                             viewStore.send(.cancelButtonTapped)
                         }) {
@@ -31,7 +39,12 @@ struct DetailMenuView: View {
                     
                     Spacer().frame(height: 30)
                     
-                    Image(uiImage: viewStore.state.menuImage ?? .imgCookNodata)
+                    var image: UIImage = . imgCookNodata
+                    if let imageData = viewStore.menu.image {
+                        let image = UIImage(data: imageData)
+                    }
+                    
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geometry.size.width - 38, height: geometry.size.width - 38)
@@ -56,9 +69,9 @@ struct DetailMenuView: View {
                         .padding(.bottom, 8)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        ForEach(viewStore.steps, id: \.self) { recipeStep in
+                        ForEach(viewStore.menu.steps, id: \.self) { recipeStep in
                             HStack {
-                                let image = CookActionType.getCookActionType(value: recipeStep.action).image
+                                let image = CookActionType.getCookActionType(value: recipeStep action).image
                                 
                                 Image(uiImage: image)
                                     .resizable()
@@ -68,7 +81,7 @@ struct DetailMenuView: View {
                                 
                                 Spacer()
                                 
-                                Text(viewStore.timeCost)
+                                Text(recipeStep.timeCost)
                                 
                                 Spacer()
                                 
@@ -86,27 +99,28 @@ struct DetailMenuView: View {
                 
                 Spacer()
                 
-                VStack {
-                    HStack {
-                        Button(action: {
-                            viewStore.send(.startButtonTapped)
-                        }) {
-                            Text("시작하기!")
-                                .font(.system(size: 24, weight: .bold))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                        }
-                        .background(._mainColor)
-                        .cornerRadius(15)
-                    }
-                }
-                .padding()
-                
+//                VStack {
+//                    HStack {
+//                        Button(action: {
+//                            viewStore.send(.startButtonTapped)
+//                        }) {
+//                            Text("시작하기!")
+//                                .font(.system(size: 24, weight: .bold))
+//                                .multilineTextAlignment(.center)
+//                                .foregroundColor(.white)
+//                        }
+//                        .background(._mainColor)
+//                        .cornerRadius(15)
+//                    }
+//                }
+//                .padding()
             }
         }
     }
 }
 
 //#Preview {
-//    DetailMenuView(store: )
+//    DetailMenuView(store: Store(initialState: DetailMenuFeature.State(menu: OpenAIRecipe.stub)) {
+//        DetailMenuFeature()
+//    })
 //}

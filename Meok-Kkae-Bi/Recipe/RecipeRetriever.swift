@@ -29,23 +29,19 @@ enum OpenAIAssistant {
     }
 }
 
-struct OpenAIRecipeStep: Codable, Sendable, Equatable {
+struct OpenAIRecipeStep: Codable, Sendable, Hashable {
     let ingredient: String?
     let action: String
     let timeCost: String?
     let fireLevel: String?
-    
-    static func ==(lhs: Self, rhs: Self) -> Bool {
-        return lhs.action == rhs.action && lhs.timeCost == rhs.timeCost && lhs.fireLevel == rhs.fireLevel
-    }
 }
 
-struct OpenAIRecipe: Codable, Sendable {
+struct OpenAIRecipe: Codable, Sendable, Hashable {
     let name: String
     let category: String
     let ingredients: [String]
     let totalCost: String
-    let steps: [String:[OpenAIRecipeStep]]
+    let steps: [String: [OpenAIRecipeStep]]
     let image: Data?
 }
 
@@ -129,7 +125,7 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
     override init() {
         let openAiApiKey = Bundle.main.object(forInfoDictionaryKey: "OPEN_AI_API_KEY") as? String
         
-        super.init()
+//        super.init()
         
         if let openAiApiKey = openAiApiKey {
             self.openAI = OpenAI(apiToken: openAiApiKey)

@@ -13,12 +13,7 @@ struct DetailMenuFeature {
     
     @ObservableState
     struct State: Equatable {
-        var menu: String
-        var menuImage: UIImage?
-        var category: String
-        var ingredients: [String]
-        var totalCost: Int
-        var steps: [OpenAIRecipeStep]
+        var menu: OpenAIRecipe
     }
     
     enum Action {
