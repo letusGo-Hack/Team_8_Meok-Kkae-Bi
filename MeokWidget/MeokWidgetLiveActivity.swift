@@ -22,13 +22,28 @@ struct MeokWidgetAttributes: ActivityAttributes {
 struct MeokWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: MeokWidgetAttributes.self) { context in
-            // Lock screen/banner UI goes here
             VStack {
-                Text("Hello \(context.state.emoji)")
+                Text("🫒 올리브 오일 2t 넣기")
+                    .fontWeight(.semibold)
+                ProgressView(value: 0.3, total: 1)
+                    .padding(.horizontal)
+                HStack {
+                    Text("00:00")
+                        .font(.caption2)
+                        .foregroundStyle(Color.gray)
+                    Spacer()
+                    Text("00:43")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Text("01:30")
+                        .font(.caption2)
+                        .foregroundStyle(Color.gray)
+                }
+                .padding(.horizontal)
             }
-            .activityBackgroundTint(Color.cyan)
+            .activityBackgroundTint(Color.orange)
             .activitySystemActionForegroundColor(Color.black)
-
         } dynamicIsland: { context in
             DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
@@ -40,19 +55,40 @@ struct MeokWidgetLiveActivity: Widget {
                     Text("Trailing")
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
+                    VStack {
+                        Spacer()
+                        Text("🫒 올리브 오일 2t 넣기")
+                            .fontWeight(.semibold)
+                        ProgressView(value: 0.3, total: 1)
+                            .padding(.horizontal)
+                        HStack {
+                            Text("00:00")
+                                .font(.caption2)
+                                .foregroundStyle(Color.gray)
+                            Spacer()
+                            Text("00:43")
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                            Spacer()
+                            Text("01:30")
+                                .font(.caption2)
+                                .foregroundStyle(Color.gray)
+                        }
+                        .padding(.horizontal)
+                        Spacer()
+                    }
                 }
             } compactLeading: {
-                Text("L")
+                Text("🍳")
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text("🫒 3:12")
             } minimal: {
-                Text(context.state.emoji)
+                Text("🫒")
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
         }
+        .supplementalActivityFamilies([.small, .medium])
     }
 }
 
@@ -64,7 +100,7 @@ extension MeokWidgetAttributes {
 
 extension MeokWidgetAttributes.ContentState {
     fileprivate static var smiley: MeokWidgetAttributes.ContentState {
-        MeokWidgetAttributes.ContentState(emoji: "😀")
+        MeokWidgetAttributes.ContentState(emoji: "🥕")
      }
      
      fileprivate static var starEyes: MeokWidgetAttributes.ContentState {
