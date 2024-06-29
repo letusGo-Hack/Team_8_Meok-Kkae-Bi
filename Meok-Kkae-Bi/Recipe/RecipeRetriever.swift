@@ -28,10 +28,14 @@ enum OpenAIAssistant {
     }
 }
 
-struct OpenAIRecipeStep: Codable, Sendable {
+struct OpenAIRecipeStep: Codable, Sendable, Equatable {
     let description: String
     let quantity: String
     let timeCost: Int
+    
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.description == rhs.description && lhs.quantity == rhs.quantity
+    }
 }
 
 struct OpenAIRecipe: Codable, Sendable {
