@@ -54,7 +54,8 @@ class OpenAIRecipe: Codable {
     var category: String
     var ingredients: [String]
     var totalCost: String
-    var steps: [String: [OpenAIRecipeStep]]
+    var steps: [[OpenAIRecipeStep]]
+    var createdAt: Date
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -62,14 +63,16 @@ class OpenAIRecipe: Codable {
         case ingredients
         case totalCost
         case steps
+        case createdAt
     }
     
-    init(name: String, category: String, ingredients: [String], totalCost: String, steps: [String : [OpenAIRecipeStep]]) {
+    init(name: String, category: String, ingredients: [String], totalCost: String, steps: [[OpenAIRecipeStep]], createdAt: Date) {
         self.name = name
         self.category = category
         self.ingredients = ingredients
         self.totalCost = totalCost
         self.steps = steps
+        self.createdAt = createdAt
     }
     
     required init(from decoder: any Decoder) throws {
@@ -78,7 +81,8 @@ class OpenAIRecipe: Codable {
         category = try values.decode(String.self, forKey: .category)
         ingredients = try values.decode([String].self, forKey: .ingredients)
         totalCost = try values.decode(String.self, forKey: .totalCost)
-        steps = try values.decode([String: [OpenAIRecipeStep]].self, forKey: .steps)
+        steps = try values.decode([[OpenAIRecipeStep]].self, forKey: .steps)
+        createdAt = Date()
     }
     
     func encode(to encoder: any Encoder) throws {
@@ -87,8 +91,8 @@ class OpenAIRecipe: Codable {
         try container.encode(category, forKey: .category)
         try container.encode(totalCost, forKey: .totalCost)
         try container.encode(ingredients, forKey: .ingredients)
-
         try container.encode(steps, forKey: .steps)
+        try container.encode(createdAt, forKey: .createdAt)
     }
 }
 
@@ -97,10 +101,9 @@ extension OpenAIRecipe: Hashable {}
 extension OpenAIRecipe {
     static var stub: OpenAIRecipe {
         return try! JSONDecoder().decode(OpenAIRecipe.self, from: Data("""
-        {\n    \"name\": \"스파게티\",\n    \"totalCost\": \"약 25분\",\n    \"category\": \"양식\",\n    \"ingredients\": [\"스파게티면🍝\", \"물💧\", \"올리브오일🫒\", \"소금🧂\", \"마늘🧄\", \"양파🧅\", \"토마토소스🍅\", \"소고기 간 것🥩\", \"파마산치즈🧀\", \"후추가루\"],\n    \"steps\": {\n        \"스파게티면_삶기\": [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"물💧\"},\n            {\"action\": \"끓이기\", \"timeCost\": \"7분\", \"fireLevel\": \"강불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"소금🧂\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"스파게티면🍝\"},\n            {\"action\": \"끓이기\", \"timeCost\": \"10분\", \"fireLevel\": \"강불\"},\n            {\"action\": \"불 끄기\"},\n            {\"action\": \"면 건지기\"}\n        ],\n        \"재료_준비하기\": [\n            {\"action\": \"재료 다지기\", \"ingredient\": \"마늘🧄\"},\n            {\"action\": \"재료 다지기\", \"ingredient\": \"양파🧅\"}\n        ],\n        \"소스_만들기\": [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"올리브오일🫒\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"마늘🧄\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"양파🧅\"},\n            {\"action\": \"볶기\", \"timeCost\": \"5분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"소고기 간 것🥩\"},\n            {\"action\": \"볶기\", \"timeCost\": \"5분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"토마토소스🍅\"},\n            {\"action\": \"끓이기\", \"timeCost\": \"5분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"후추가루\"}\n        ],\n        \"면과_소스_합치기\": [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"삶은 스파게티면🍝\"},\n            {\"action\": \"섞기\", \"timeCost\": \"2분\"},\n            {\"action\": \"불 끄기\"}\n        ],\n        \"마무리\": [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"파마산치즈🧀\", \"quantity\": \"적당히\"},\n            {\"action\": \"서빙하기\"}\n        ]\n    }\n}
+        {\n    \"name\": \"스파게티\",\n    \"totalCost\": \"약 30분\",\n    \"category\": \"양식\",\n    \"ingredients\": [\"스파게티면\", \"물\", \"🧅양파\", \"🧄마늘\", \"🍅토마토소스\", \"🥩소고기 다짐육\", \"🫒올리브오일\", \"🧂소금\", \"후추\", \"🧀파마산 치즈\", \"🌿바질\"],\n    \"steps\": [\n        [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"물\"},\n            {\"action\": \"끓이기\", \"timeCost\": \"10분\", \"fireLevel\": \"강불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🧂소금\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"스파게티면\"},\n            {\"action\": \"끓이기\", \"timeCost\": \"8-10분\", \"fireLevel\": \"강불\"},\n            {\"action\": \"불 끄기\"},\n            {\"action\": \"면 건지기\"}\n        ],\n        [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🫒올리브오일\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🧄마늘\"},\n            {\"action\": \"볶기\", \"timeCost\": \"1분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🧅양파\"},\n            {\"action\": \"볶기\", \"timeCost\": \"2분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🥩소고기 다짐육\"},\n            {\"action\": \"볶기\", \"timeCost\": \"5분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🍅토마토소스\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"후추\"},\n            {\"action\": \"끓이기\", \"timeCost\": \"5분\", \"fireLevel\": \"중불\"},\n            {\"action\": \"불 끄기\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"스파게티면\"},\n            {\"action\": \"섞기\", \"timeCost\": \"1분\", \"fireLevel\": \"약불\"}\n        ],\n        [\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🧀파마산 치즈\"},\n            {\"action\": \"재료 넣기\", \"ingredient\": \"🌿바질\"},\n            {\"action\": \"완성\"}\n        ]\n    ]\n}
         """.utf8))
     }
-    
 }
 
 class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
@@ -127,10 +130,10 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
         "totalCost": "약 15분",
         "category": "양식"
         "ingredients": ["파스타면", "물","파마산치즈 가루","양파","마늘","후추가루","올리브오일","소금", "베이컨","계란혼합물"]
-        "steps": {
-           "파스타면_삶기": [{"action:"재료 넣기", "ingredient":"물"}, {"action:"끓이기", "timeCost":"5분", "fireLevel":"강불"}, {"action:"재료넣기", "ingredient":"파스타면"}, {"action":"끓이기", "timeCost":"10분"}, {"action":"불끄기"}, {"action":"면 건지기"}],
-           "🧅와_🥓_볶기": [{"action:"재료 넣기", "ingredient":"🫒오일", "fireLevel":"중불"}, {"action":"재료넣기", "ingredient": "🧅"}, {"action": "재료 넣기", "ingredient":"🥓"},{"action": "재료 넣기", "ingredient":"후춧가루"},{"action": "볶기", "timeCost":"3분", "fireLevel":"중불"}, {"action": "재료넣기", "timeCost":"면수"}, {"action": "볶기", "timeCost":"1분", "fireLevel":"중불"},{"action": "불끄기"},{"action": "🥚혼합물"}]
-         }
+        "steps": [
+            [{"action:"재료 넣기", "ingredient":"물"}, {"action:"끓이기", "timeCost":"5분", "fireLevel":"강불"}, {"action:"재료넣기", "ingredient":"파스타면"}, {"action":"끓이기", "timeCost":"10분"}, {"action":"불끄기"}, {"action":"면 건지기"}],
+           [{"action:"재료 넣기", "ingredient":"🫒오일", "fireLevel":"중불"}, {"action":"재료넣기", "ingredient": "🧅"}, {"action": "재료 넣기", "ingredient":"🥓"},{"action": "재료 넣기", "ingredient":"후춧가루"},{"action": "볶기", "timeCost":"3분", "fireLevel":"중불"}, {"action": "재료넣기", "timeCost":"면수"}, {"action": "볶기", "timeCost":"1분", "fireLevel":"중불"},{"action": "불끄기"},{"action": "🥚혼합물"}]
+         ]
     }
     """
 
@@ -145,9 +148,9 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
         }
     }
     
-    func getRecipe(recipeName: String) async throws -> OpenAIRecipe {
+    func getRecipe(recipeName: String) async throws -> Result<OpenAIRecipe, Error> {
         
-        return OpenAIRecipe.stub
+        return .success(OpenAIRecipe.stub)
         
         let chatQuery = ChatQuery(messages: [.system(.init(content: self.defaultPrompt, name: "assistant")), .user(.init(content: .string("\(recipeName) 만드는 방법 알려줘")))], model: .gpt4_o)
 //
@@ -165,10 +168,10 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
             
             print(firstQuestion)
             
-            return recipe
+            return .success(recipe)
         } catch {
             print("OpenAPI Error \(error)")
-            throw error
+            return .failure(error)
         }
     }
     
