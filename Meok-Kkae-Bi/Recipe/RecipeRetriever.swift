@@ -18,14 +18,14 @@ enum OpenAIV1EndPoint {
     }
 }
 
-struct OpenAIRecipeStep: Codable, Sendable {
+struct OpenAIRecipeStep: Codable, Sendable, Hashable {
     let ingredient: String?
     let action: String
     let timeCost: String?
     let fireLevel: String?
 }
 
-struct OpenAIRecipe: Codable, Sendable {
+struct OpenAIRecipe: Codable, Sendable, Hashable {
     let name: String
     let category: String
     let ingredients: [String]

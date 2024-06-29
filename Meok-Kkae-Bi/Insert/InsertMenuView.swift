@@ -21,7 +21,7 @@ struct InsertMenuView: View {
                             .bold()
                         Spacer()
                         Button(action: {
-                            // Close action
+                            viewStore.send(.cancelButtonTapped)
                         }) {
                             Image(systemName: "xmark")
                                 .foregroundColor(.orange)
@@ -34,15 +34,21 @@ struct InsertMenuView: View {
                         Group {
                             Text("이름")
                                 .font(.headline)
-                            TextField("레시피 이름을 입력하세요.", text: $recipeName)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("레시피 이름을 입력하세요.", text: viewStore.binding(
+                                get: \.recipeName,
+                                send: { InsertMenuFeature.Action.setRecipeName($0) }
+                            ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         }
                         .padding(.horizontal)
                         
                         Group {
                             Text("재료")
                                 .font(.headline)
-                            TextField("레시피 재료를 입력하세요.", text: $recipeIngredients)
+                            TextField("레시피 재료를 입력하세요.", text: viewStore.binding(
+                                get: \.recipeIngredients,
+                                send: { InsertMenuFeature.Action.setRecipeIngredients($0) }
+                            ))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                         }
                         .padding(.horizontal)
@@ -50,8 +56,11 @@ struct InsertMenuView: View {
                         Group {
                             Text("분류")
                                 .font(.headline)
-                            Picker("분류", selection: $selectedCategory) {
-                                ForEach(categories, id: \.self) {
+                            Picker("분류", selection: viewStore.binding(
+                                get: \.selectedCategory,
+                                send: { InsertMenuFeature.Action.setCategory($0) }
+                            )) {
+                                ForEach(viewStore.categories, id: \.self) {
                                     Text($0)
                                 }
                             }
@@ -63,44 +72,44 @@ struct InsertMenuView: View {
                             .font(.headline)
                             .padding(.horizontal)
                         
-                            ForEach(steps) { step in
-                                HStack {
-                                    Text(step.time)
-                                    Spacer()
-                                    Text(step.ingredients + " " + step.description)
-                                    Spacer()
-                                    Button(action: {
-                                        if let index = steps.firstIndex(where: { $0.id == step.id }) {
-                                            steps.remove(at: index)
-                                        }
-                                    }) {
-                                        Image(systemName: "xmark")
-                                            .foregroundColor(.orange)
+                        ForEach(viewStore.steps, id: \.self) { (step: OpenAIRecipeStep) in
+                            HStack {
+                                Text(step.timeCost ?? "")
+                                Spacer()
+                                Text((step.ingredient ?? "") + " " + step.action)
+                                Spacer()
+                                Button(action: {
+                                    if let index = viewStore.steps.firstIndex(where: { $0 == step }) {
+                                        viewStore.send(.removeStep(index))
+                                        HapticManager.instance.generateHaptic()
                                     }
+                                }) {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.orange)
                                 }
-                                .padding(.horizontal)
                             }
-                            .onDelete { indices in
-                                steps.remove(atOffsets: indices)
-                            }
+                            .padding(.horizontal)
+                        }
                         
                         HStack {
-                            TextField("시간", text: $newStepTime)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            TextField("재료", text: $newStepIngredients)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            TextField("행동", text: $newStepDescription)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("시간", text: viewStore.binding(
+                                get: \.newStepTime,
+                                send: InsertMenuFeature.Action.setNewStepTime
+                            ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("재료", text: viewStore.binding(
+                                get: \.newStepIngredient,
+                                send: InsertMenuFeature.Action.setNewStepIngredient
+                            ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("행동", text: viewStore.binding(
+                                get: \.newStepDescription,
+                                send: InsertMenuFeature.Action.setNewStepDescription
+                            ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                             Button(action: {
-                                if !newStepDescription.isEmpty {
-                                    steps.append(RecipeStep(
-                                        time: newStepTime,
-                                        ingredients: newStepIngredients,
-                                        description: newStepDescription
-                                    ))
-                                    newStepTime = ""
-                                    newStepIngredients = ""
-                                    newStepDescription = ""
+                                if !viewStore.newStepDescription.isEmpty {
+                                    viewStore.send(.addStep)
                                 }
                             }) {
                                 Text("추가")
@@ -128,7 +137,7 @@ struct InsertMenuView: View {
                 }
                 .background(Color(UIColor.systemBackground))
             }
-            .animation(.easeInOut, value: self.steps)
+            .scrollDismissesKeyboard(.interactively)
         }
     }
 }
