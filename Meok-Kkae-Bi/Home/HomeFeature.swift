@@ -11,6 +11,7 @@ import SwiftData
 
 @Reducer
 struct HomeFeature {
+    
     @ObservableState
     struct State: Equatable {
         var menus: [OpenAIRecipe] = []
@@ -22,6 +23,8 @@ struct HomeFeature {
         case onAppear
         case gptButtonTapped
         case addButtonTapped
+        case addRecipe(OpenAIRecipe)
+        case failedToAddRecipe(String)
         case menuCellTapped(OpenAIRecipe)
         case insertMenu(PresentationAction<InsertMenuFeature.Action>)
         case detailMenu(PresentationAction<DetailMenuFeature.Action>)
@@ -33,7 +36,6 @@ struct HomeFeature {
                 
             // 데이터 첫 로드
             case .onAppear:
-//                state.menus = UserDefaults.standard.object(forKey: "menus") as? [OpenAIRecipe] ?? []
                 if let saved = UserDefaults.standard.object(forKey: "menus") as? Data,
                     let savedRecipes = try? JSONDecoder().decode([OpenAIRecipe].self, from: saved) {
                     
@@ -41,9 +43,17 @@ struct HomeFeature {
                 }
                 
                 return .none
-                
             // GPT 버튼 클릭 이벤트
             case .gptButtonTapped:
+                return .run { send in
+                    let result = try await OpenAIRecipeRetriever().getRecipe(recipeName: "스파게티")
+                    switch result {
+                    case .success(let recipe):
+                        await send(.addRecipe(recipe))
+                    case .failure(let error):
+                        await send(.failedToAddRecipe(String(describing: error)))
+                    }
+                }
                 return .none
                 
             // 레시피 추가 버튼 클릭 이벤트
@@ -54,41 +64,27 @@ struct HomeFeature {
             case .insertMenu(.presented(.cancelButtonTapped)):
                 state.insertMenu = nil
                 return .none
-            case .insertMenu(.presented(.requestRecipe)):
+            // 레시피 추가 화면 닫기 이벤트
+            case let .insertMenu(.presented(.completeButtonTapped(recipe))):
+                state.menus.append(recipe)
+                state.insertMenu = nil
                 return .none
-            case .insertMenu(.presented(.addRecipe(let recipe))):
-//                modelContext.insert(recipe)
-//                try! modelContext.save()
-//                let descriptor = FetchDescriptor<OpenAIRecipe>(
-//                    predicate: #Predicate { _ in true },
-//                    sortBy: [
-//                        .init(\.createdAt)
-//                    ]
-//                )
-//                let recipes = try! modelContext.fetch(descriptor)
-//                state.menus = recipes
-                
-//                print(recipes.count)
-                let userDefaults = UserDefaults.standard
-                if let saved = userDefaults.object(forKey: "menus") as? Data,
-                    var savedRecipes = try? JSONDecoder().decode([OpenAIRecipe].self, from: saved) {
-                    
-                    savedRecipes.append(recipe)
-                    state.menus = savedRecipes
-                } else {
-                    state.menus = [recipe]
-                }
-                
-                if let encoded = try? JSONEncoder().encode(state.menus) {
-                    userDefaults.set(encoded, forKey: "menus")
-                }
-//                var menus = UserDefaults.standard.object(forKey: "menus") as? [OpenAIRecipe]
+//            case .insertMenu(.presented(.addRecipe(let recipe))):
+//                let userDefaults = UserDefaults.standard
+//                if let saved = userDefaults.object(forKey: "menus") as? Data,
+//                    var savedRecipes = try? JSONDecoder().decode([OpenAIRecipe].self, from: saved) {
+//                    
+//                    savedRecipes.append(recipe)
+//                    state.menus = savedRecipes
+//                } else {
+//                    state.menus = [recipe]
+//                }
 //                
-//                menus?.append(recipe)
+//                if let encoded = try? JSONEncoder().encode(state.menus) {
+//                    userDefaults.set(encoded, forKey: "menus")
+//                }
 //                
-//                UserDefaults.standard.set(menus, forKey: "menus")
-                
-                return .none
+//                return .none
             case .insertMenu(.presented(.failedToAddRecipe(let errorMessage))):
                 print(errorMessage)
                 return .none
@@ -105,6 +101,26 @@ struct HomeFeature {
             case .detailMenu(_):
                 return .none
             case .insertMenu(.dismiss):
+                return .none
+            case .insertMenu:
+                return .none
+            case .addRecipe(let recipe):
+                let userDefaults = UserDefaults.standard
+                if let saved = userDefaults.object(forKey: "menus") as? Data,
+                    var savedRecipes = try? JSONDecoder().decode([OpenAIRecipe].self, from: saved) {
+
+                    savedRecipes.append(recipe)
+                    state.menus = savedRecipes
+                } else {
+                    state.menus = [recipe]
+                }
+
+                if let encoded = try? JSONEncoder().encode(state.menus) {
+                    userDefaults.set(encoded, forKey: "menus")
+                }
+
+                return .none
+            case .failedToAddRecipe(_):
                 return .none
             }
         }
