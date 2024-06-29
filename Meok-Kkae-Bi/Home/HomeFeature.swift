@@ -12,7 +12,7 @@ struct HomeFeature {
     
     @ObservableState
     struct State: Equatable {
-        var menus: [String] = ["1","2","3"] // TODO: 데이터 모델 정해지면 바꾸기
+        var menus: [OpenAIRecipe] = []
         
         @Presents var insertMenu: InsertMenuFeature.State?
         @Presents var detailMenu: DetailMenuFeature.State?
@@ -20,8 +20,9 @@ struct HomeFeature {
     
     enum Action {
         case onAppear
+        case gptButtonTapped
         case addButtonTapped
-        case menuCellTapped(String)
+        case menuCellTapped(OpenAIRecipe)
         case insertMenu(PresentationAction<InsertMenuFeature.Action>)
         case detailMenu(PresentationAction<DetailMenuFeature.Action>)
     }
@@ -32,7 +33,19 @@ struct HomeFeature {
                 
             // 데이터 첫 로드
             case .onAppear:
-                // TODO: 처음에 데이터 로딩하는 코드 추가 SwiftData
+                state.menus = [
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
+                ]
+                return .none
+                
+            // GPT 버튼 클릭 이벤트
+            case .gptButtonTapped:
                 return .none
                 
             // 레시피 추가 버튼 클릭 이벤트

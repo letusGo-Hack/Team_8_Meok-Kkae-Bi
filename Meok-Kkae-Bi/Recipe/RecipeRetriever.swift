@@ -25,7 +25,11 @@ struct OpenAIRecipeStep: Codable, Sendable {
     let fireLevel: String?
 }
 
-struct OpenAIRecipe: Codable, Sendable {
+struct OpenAIRecipe: Codable, Sendable, Equatable {
+    static func == (lhs: OpenAIRecipe, rhs: OpenAIRecipe) -> Bool {
+        return true
+    }
+    
     let name: String
     let category: String
     let ingredients: [String]
@@ -114,7 +118,7 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
     override init() {
         let openAiApiKey = Bundle.main.object(forInfoDictionaryKey: "OPEN_AI_API_KEY") as? String
         
-        super.init()
+//        super.init()
         
         if let openAiApiKey = openAiApiKey {
             self.openAI = OpenAI(apiToken: openAiApiKey)
