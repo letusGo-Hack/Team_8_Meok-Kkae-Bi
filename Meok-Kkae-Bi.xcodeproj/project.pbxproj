@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		609F3ABA2C2F9A0B002CD704 /* Meok_Kkae_BiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3AB92C2F9A0B002CD704 /* Meok_Kkae_BiApp.swift */; };
-		609F3ABC2C2F9A0B002CD704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3ABB2C2F9A0B002CD704 /* ContentView.swift */; };
-		609F3ABE2C2F9A0B002CD704 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3ABD2C2F9A0B002CD704 /* Item.swift */; };
 		609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */; };
 		609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */; };
 		609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3ACC2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift */; };
 		609F3AD72C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3AD62C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift */; };
 		609F3AD92C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3AD82C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift */; };
+		609F3B0B2C2FA1DA002CD704 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609F3B0A2C2FA1DA002CD704 /* WidgetKit.framework */; };
+		609F3B0D2C2FA1DA002CD704 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609F3B0C2C2FA1DA002CD704 /* SwiftUI.framework */; };
+		609F3B102C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B0F2C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift */; };
+		609F3B122C2FA1DA002CD704 /* MeokWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B112C2FA1DA002CD704 /* MeokWidgetBundle.swift */; };
+		609F3B142C2FA1DA002CD704 /* MeokWidgetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B132C2FA1DA002CD704 /* MeokWidgetControl.swift */; };
+		609F3B162C2FA1DA002CD704 /* MeokWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B152C2FA1DA002CD704 /* MeokWidget.swift */; };
+		609F3B182C2FA1DA002CD704 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B172C2FA1DA002CD704 /* AppIntent.swift */; };
+		609F3B1A2C2FA1DB002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3B192C2FA1DB002CD704 /* Assets.xcassets */; };
+		609F3B1E2C2FA1DB002CD704 /* MeokWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FDBE0A2E2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A2D2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift */; };
+		FDBE0A322C2FC5F600907ACE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A312C2FC5F600907ACE /* HomeView.swift */; };
+		FDBE0A332C2FC5F600907ACE /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A302C2FC5F600907ACE /* HomeFeature.swift */; };
+		FDBE0A372C2FC5FF00907ACE /* InsertMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A362C2FC5FF00907ACE /* InsertMenuView.swift */; };
+		FDBE0A382C2FC5FF00907ACE /* InsertMenuFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A352C2FC5FF00907ACE /* InsertMenuFeature.swift */; };
+		FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */; };
+		FDBE0A3D2C2FC60800907ACE /* DetailMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A3B2C2FC60800907ACE /* DetailMenuView.swift */; };
+		FDBE0A402C2FC73B00907ACE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FDBE0A3F2C2FC73B00907ACE /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +46,33 @@
 			remoteGlobalIDString = 609F3AB52C2F9A0A002CD704;
 			remoteInfo = "Meok-Kkae-Bi";
 		};
+		609F3B1C2C2FA1DB002CD704 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 609F3AAE2C2F9A0A002CD704 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 609F3B072C2FA1DA002CD704;
+			remoteInfo = MeokWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		609F3B1F2C2FA1DB002CD704 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				609F3B1E2C2FA1DB002CD704 /* MeokWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeokWidgetExtension.entitlements; sourceTree = "<group>"; };
+		6021906D2C2FBC2400EE8AC3 /* Meok-Kkae-Bi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Meok-Kkae-Bi.entitlements"; sourceTree = "<group>"; };
 		609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meok-Kkae-Bi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		609F3AB92C2F9A0B002CD704 /* Meok_Kkae_BiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiApp.swift; sourceTree = "<group>"; };
-		609F3ABB2C2F9A0B002CD704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		609F3ABD2C2F9A0B002CD704 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		609F3AC82C2F9A0C002CD704 /* Meok-Kkae-BiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meok-Kkae-BiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +80,23 @@
 		609F3AD22C2F9A0C002CD704 /* Meok-Kkae-BiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meok-Kkae-BiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F3AD62C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiUITests.swift; sourceTree = "<group>"; };
 		609F3AD82C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MeokWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		609F3B0A2C2FA1DA002CD704 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		609F3B0C2C2FA1DA002CD704 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		609F3B0F2C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeokWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		609F3B112C2FA1DA002CD704 /* MeokWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeokWidgetBundle.swift; sourceTree = "<group>"; };
+		609F3B132C2FA1DA002CD704 /* MeokWidgetControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeokWidgetControl.swift; sourceTree = "<group>"; };
+		609F3B152C2FA1DA002CD704 /* MeokWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeokWidget.swift; sourceTree = "<group>"; };
+		609F3B172C2FA1DA002CD704 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		609F3B192C2FA1DB002CD704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		609F3B1B2C2FA1DB002CD704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDBE0A2D2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiApp.swift; sourceTree = "<group>"; };
+		FDBE0A302C2FC5F600907ACE /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
+		FDBE0A312C2FC5F600907ACE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FDBE0A352C2FC5FF00907ACE /* InsertMenuFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMenuFeature.swift; sourceTree = "<group>"; };
+		FDBE0A362C2FC5FF00907ACE /* InsertMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMenuView.swift; sourceTree = "<group>"; };
+		FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuFeature.swift; sourceTree = "<group>"; };
+		FDBE0A3B2C2FC60800907ACE /* DetailMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBE0A402C2FC73B00907ACE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,15 +122,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		609F3B052C2FA1DA002CD704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609F3B0D2C2FA1DA002CD704 /* SwiftUI.framework in Frameworks */,
+				609F3B0B2C2FA1DA002CD704 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		609F3AAD2C2F9A0A002CD704 = {
 			isa = PBXGroup;
 			children = (
+				6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */,
 				609F3AB82C2F9A0B002CD704 /* Meok-Kkae-Bi */,
 				609F3ACB2C2F9A0C002CD704 /* Meok-Kkae-BiTests */,
 				609F3AD52C2F9A0C002CD704 /* Meok-Kkae-BiUITests */,
+				609F3B0E2C2FA1DA002CD704 /* MeokWidget */,
+				609F3B092C2FA1DA002CD704 /* Frameworks */,
 				609F3AB72C2F9A0B002CD704 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +153,7 @@
 				609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */,
 				609F3AC82C2F9A0C002CD704 /* Meok-Kkae-BiTests.xctest */,
 				609F3AD22C2F9A0C002CD704 /* Meok-Kkae-BiUITests.xctest */,
+				609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +161,11 @@
 		609F3AB82C2F9A0B002CD704 /* Meok-Kkae-Bi */ = {
 			isa = PBXGroup;
 			children = (
-				609F3AB92C2F9A0B002CD704 /* Meok_Kkae_BiApp.swift */,
-				609F3ABB2C2F9A0B002CD704 /* ContentView.swift */,
-				609F3ABD2C2F9A0B002CD704 /* Item.swift */,
+				FDBE0A392C2FC60100907ACE /* Detail */,
+				FDBE0A342C2FC5F800907ACE /* Insert */,
+				FDBE0A2F2C2FC5EE00907ACE /* Home */,
+				FDBE0A2C2C2FC5D500907ACE /* App */,
+				6021906D2C2FBC2400EE8AC3 /* Meok-Kkae-Bi.entitlements */,
 				609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */,
 				609F3AC12C2F9A0C002CD704 /* Preview Content */,
 			);
@@ -130,6 +197,64 @@
 			path = "Meok-Kkae-BiUITests";
 			sourceTree = "<group>";
 		};
+		609F3B092C2FA1DA002CD704 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				609F3B0A2C2FA1DA002CD704 /* WidgetKit.framework */,
+				609F3B0C2C2FA1DA002CD704 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		609F3B0E2C2FA1DA002CD704 /* MeokWidget */ = {
+			isa = PBXGroup;
+			children = (
+				609F3B0F2C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift */,
+				609F3B112C2FA1DA002CD704 /* MeokWidgetBundle.swift */,
+				609F3B132C2FA1DA002CD704 /* MeokWidgetControl.swift */,
+				609F3B152C2FA1DA002CD704 /* MeokWidget.swift */,
+				609F3B172C2FA1DA002CD704 /* AppIntent.swift */,
+				609F3B192C2FA1DB002CD704 /* Assets.xcassets */,
+				609F3B1B2C2FA1DB002CD704 /* Info.plist */,
+			);
+			path = MeokWidget;
+			sourceTree = "<group>";
+		};
+		FDBE0A2C2C2FC5D500907ACE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE0A2D2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FDBE0A2F2C2FC5EE00907ACE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE0A302C2FC5F600907ACE /* HomeFeature.swift */,
+				FDBE0A312C2FC5F600907ACE /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FDBE0A342C2FC5F800907ACE /* Insert */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE0A352C2FC5FF00907ACE /* InsertMenuFeature.swift */,
+				FDBE0A362C2FC5FF00907ACE /* InsertMenuView.swift */,
+			);
+			path = Insert;
+			sourceTree = "<group>";
+		};
+		FDBE0A392C2FC60100907ACE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */,
+				FDBE0A3B2C2FC60800907ACE /* DetailMenuView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,12 +265,17 @@
 				609F3AB22C2F9A0A002CD704 /* Sources */,
 				609F3AB32C2F9A0A002CD704 /* Frameworks */,
 				609F3AB42C2F9A0A002CD704 /* Resources */,
+				609F3B1F2C2FA1DB002CD704 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				609F3B1D2C2FA1DB002CD704 /* PBXTargetDependency */,
 			);
 			name = "Meok-Kkae-Bi";
+			packageProductDependencies = (
+				FDBE0A3F2C2FC73B00907ACE /* ComposableArchitecture */,
+			);
 			productName = "Meok-Kkae-Bi";
 			productReference = 609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +316,23 @@
 			productReference = 609F3AD22C2F9A0C002CD704 /* Meok-Kkae-BiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		609F3B072C2FA1DA002CD704 /* MeokWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 609F3B222C2FA1DB002CD704 /* Build configuration list for PBXNativeTarget "MeokWidgetExtension" */;
+			buildPhases = (
+				609F3B042C2FA1DA002CD704 /* Sources */,
+				609F3B052C2FA1DA002CD704 /* Frameworks */,
+				609F3B062C2FA1DA002CD704 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeokWidgetExtension;
+			productName = MeokWidgetExtension;
+			productReference = 609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,6 +354,9 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 609F3AB52C2F9A0A002CD704;
 					};
+					609F3B072C2FA1DA002CD704 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 				};
 			};
 			buildConfigurationList = 609F3AB12C2F9A0A002CD704 /* Build configuration list for PBXProject "Meok-Kkae-Bi" */;
@@ -218,6 +368,9 @@
 				Base,
 			);
 			mainGroup = 609F3AAD2C2F9A0A002CD704;
+			packageReferences = (
+				FDBE0A3E2C2FC73B00907ACE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 609F3AB72C2F9A0B002CD704 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,6 +378,7 @@
 				609F3AB52C2F9A0A002CD704 /* Meok-Kkae-Bi */,
 				609F3AC72C2F9A0C002CD704 /* Meok-Kkae-BiTests */,
 				609F3AD12C2F9A0C002CD704 /* Meok-Kkae-BiUITests */,
+				609F3B072C2FA1DA002CD704 /* MeokWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +407,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		609F3B062C2FA1DA002CD704 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609F3B1A2C2FA1DB002CD704 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,9 +422,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609F3ABC2C2F9A0B002CD704 /* ContentView.swift in Sources */,
-				609F3ABE2C2F9A0B002CD704 /* Item.swift in Sources */,
-				609F3ABA2C2F9A0B002CD704 /* Meok_Kkae_BiApp.swift in Sources */,
+				FDBE0A372C2FC5FF00907ACE /* InsertMenuView.swift in Sources */,
+				FDBE0A382C2FC5FF00907ACE /* InsertMenuFeature.swift in Sources */,
+				FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */,
+				FDBE0A3D2C2FC60800907ACE /* DetailMenuView.swift in Sources */,
+				FDBE0A322C2FC5F600907ACE /* HomeView.swift in Sources */,
+				FDBE0A332C2FC5F600907ACE /* HomeFeature.swift in Sources */,
+				FDBE0A2E2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +449,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		609F3B042C2FA1DA002CD704 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609F3B102C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift in Sources */,
+				609F3B122C2FA1DA002CD704 /* MeokWidgetBundle.swift in Sources */,
+				609F3B182C2FA1DA002CD704 /* AppIntent.swift in Sources */,
+				609F3B142C2FA1DA002CD704 /* MeokWidgetControl.swift in Sources */,
+				609F3B162C2FA1DA002CD704 /* MeokWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -295,6 +473,11 @@
 			isa = PBXTargetDependency;
 			target = 609F3AB52C2F9A0A002CD704 /* Meok-Kkae-Bi */;
 			targetProxy = 609F3AD32C2F9A0C002CD704 /* PBXContainerItemProxy */;
+		};
+		609F3B1D2C2FA1DB002CD704 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 609F3B072C2FA1DA002CD704 /* MeokWidgetExtension */;
+			targetProxy = 609F3B1C2C2FA1DB002CD704 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -423,6 +606,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Meok-Kkae-Bi/Meok-Kkae-Bi.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -436,6 +621,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-Bi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development kr.letushack.Meok-Kkae-Bi";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development kr.letushack.Meok-Kkae-Bi 1719634437";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,6 +642,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Meok-Kkae-Bi/Meok-Kkae-Bi.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -469,6 +657,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,7 +666,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-Bi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development kr.letushack.Meok-Kkae-Bi";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development kr.letushack.Meok-Kkae-Bi 1719634437";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,14 +677,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 92NGUT4BRA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-BiTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,14 +697,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 92NGUT4BRA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-BiTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,13 +716,15 @@
 		609F3AE32C2F9A0C002CD704 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 92NGUT4BRA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-BiUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -542,17 +735,85 @@
 		609F3AE42C2F9A0C002CD704 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 92NGUT4BRA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-BiUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Meok-Kkae-Bi";
+			};
+			name = Release;
+		};
+		609F3B202C2FA1DB002CD704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MeokWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 92NGUT4BRA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MeokWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MeokWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-Bi.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development kr.letushack.Meok-Kkae-Bi.widget 1719634443";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		609F3B212C2FA1DB002CD704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MeokWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 92NGUT4BRA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MeokWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MeokWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-Bi.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development kr.letushack.Meok-Kkae-Bi.widget 1719634443";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -595,7 +856,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		609F3B222C2FA1DB002CD704 /* Build configuration list for PBXNativeTarget "MeokWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				609F3B202C2FA1DB002CD704 /* Debug */,
+				609F3B212C2FA1DB002CD704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FDBE0A3E2C2FC73B00907ACE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FDBE0A3F2C2FC73B00907ACE /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FDBE0A3E2C2FC73B00907ACE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 609F3AAE2C2F9A0A002CD704 /* Project object */;
 }
