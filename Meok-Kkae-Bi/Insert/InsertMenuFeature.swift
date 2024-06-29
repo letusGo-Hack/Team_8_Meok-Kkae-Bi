@@ -21,21 +21,13 @@ struct InsertMenuFeature {
         var recipeIngredients: String = ""
         var selectedCategory: String = "한식"
         
-        var steps: [OpenAIRecipeStep] = [
-            .init(ingredient: "고기", action: "손질하기", timeCost: "130", fireLevel: nil),
-            .init(ingredient: "양파", action: "다지기", timeCost: "10", fireLevel: nil),
-            .init(ingredient: "당근", action: "다지기", timeCost: "10", fireLevel: nil),
-            .init(ingredient: "고기", action: "볶기", timeCost: "10", fireLevel: "강"),
-            .init(ingredient: "양파", action: "다지기", timeCost: "10", fireLevel: nil),
-            .init(ingredient: "당근", action: "다지기", timeCost: "10", fireLevel: nil),
-            .init(ingredient: "고기", action: "볶기", timeCost: "10", fireLevel: "강"),
-            .init(ingredient: "양파", action: "다지기", timeCost: "10", fireLevel: nil),
-            .init(ingredient: "당근", action: "다지기", timeCost: "10", fireLevel: nil),
-        ]
+        var steps: [OpenAIRecipeStep] = []
         
         var newStepTime: String = ""
         var newStepIngredient: String = ""
         var newStepDescription: String = ""
+        
+        var isValidToComplete: Bool = false
     }
     
     enum Action {
@@ -51,6 +43,10 @@ struct InsertMenuFeature {
         
         case removeStep(Int)
         case addStep
+        
+        case checkIsValidToComplete
+        
+        case completeButtonTapped(OpenAIRecipe)
     }
     
     init() {
@@ -68,15 +64,15 @@ struct InsertMenuFeature {
                 
             case .setRecipeName(let name):
                 state.recipeName = name
-                return .none
+                return .send(.checkIsValidToComplete)
                 
             case .setRecipeIngredients(let ingredients):
                 state.recipeIngredients = ingredients
-                return .none
+                return .send(.checkIsValidToComplete)
                 
             case .setCategory(let category):
                 state.selectedCategory = category
-                return .none
+                return .send(.checkIsValidToComplete)
             
             case .setNewStepTime(let time):
                 state.newStepTime = time
@@ -92,7 +88,7 @@ struct InsertMenuFeature {
             
             case .removeStep(let index):
                 state.steps.remove(at: index)
-                return .none
+                return .send(.checkIsValidToComplete)
                 
             case .addStep:
                 let newStep = OpenAIRecipeStep(
@@ -102,6 +98,12 @@ struct InsertMenuFeature {
                     fireLevel: nil
                 )
                 state.steps.append(newStep)
+                return .send(.checkIsValidToComplete)
+                
+            case .checkIsValidToComplete:
+                state.isValidToComplete = !state.recipeName.isEmpty
+                    && !state.recipeIngredients.isEmpty
+                    && !state.steps.isEmpty
                 return .none
                 
             default:

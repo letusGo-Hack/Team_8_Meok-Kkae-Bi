@@ -55,34 +55,33 @@ struct HomeView: View {
                                     .frame(maxWidth: .infinity)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                             }
+                            
+                            Button(
+                                action: {
+                                    let attributes = MeokWidgetAttributes(name: "MUK")
+                                    let contentState = MeokWidgetAttributes.ContentState(emoji: "🚧")
+                                    
+                                    do {
+                                        let activity = try Activity<MeokWidgetAttributes>.request(
+                                            attributes: attributes,
+                                            contentState: contentState
+                                        )
+                                    print(activity)
+                                }
+                                catch {
+                                    print(error)
+                                }
+                            }) {
+                                Text("DynamicIsland!")
+                            }
+                            
+                            Text("추가하기")
+                                .onTapGesture {
+                                    viewStore.send(.addButtonTapped)
+                                }
                         }
-
                     }
                 }
-                
-                Button(
-                    action: {
-                        let attributes = MeokWidgetAttributes(name: "MUK")
-                        let contentState = MeokWidgetAttributes.ContentState(emoji: "🚧")
-                        
-                        do {
-                            let activity = try Activity<MeokWidgetAttributes>.request(
-                                attributes: attributes,
-                                contentState: contentState
-                            )
-                        print(activity)
-                    }
-                    catch {
-                        print(error)
-                    }
-                }) {
-                    Text("DynamicIsland!")
-                }
-                
-                Text("추가하기")
-                    .onTapGesture {
-                        viewStore.send(.addButtonTapped)
-                    }
             }
             .fullScreenCover(
                 item: $store.scope(state: \.insertMenu, action: \.insertMenu)

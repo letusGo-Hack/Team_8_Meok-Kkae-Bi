@@ -74,7 +74,7 @@ struct InsertMenuView: View {
                         
                         ForEach(viewStore.steps, id: \.self) { (step: OpenAIRecipeStep) in
                             HStack {
-                                Text(step.timeCost ?? "")
+                                Text(buildTimeString(step.timeCost))
                                 Spacer()
                                 Text((step.ingredient ?? "") + " " + step.action)
                                 Spacer()
@@ -92,7 +92,7 @@ struct InsertMenuView: View {
                         }
                         
                         HStack {
-                            TextField("시간", text: viewStore.binding(
+                            TextField("시간(초)", text: viewStore.binding(
                                 get: \.newStepTime,
                                 send: InsertMenuFeature.Action.setNewStepTime
                             ))
@@ -124,12 +124,14 @@ struct InsertMenuView: View {
                     .padding(.vertical)
                     
                     Button(action: {
-                        // 완료 버튼 액션
+                        guard viewStore.isValidToComplete else { return }
+                        let recipe = buildRecipe(viewStore.state)
+                        viewStore.send(.completeButtonTapped(recipe))
                     }) {
                         Text("완료")
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color.gray)
+                            .background(viewStore.isValidToComplete ? Color.orange : Color.gray)
                             .foregroundColor(.white)
                             .cornerRadius(16)
                     }
@@ -139,6 +141,34 @@ struct InsertMenuView: View {
             }
             .scrollDismissesKeyboard(.interactively)
         }
+    }
+    
+    private func buildTimeString(_ string: String?) -> String {
+        guard let string = string,
+              let seconds: Int = Int(string) else {
+            return ""
+        }
+        let minutes: Int = Int(seconds / 60)
+        let remainingSeconds: Int = seconds % 60
+        
+        if minutes > 0 {
+            return "\(minutes)분 \(remainingSeconds)초"
+        } else {
+            return "\(remainingSeconds)초"
+        }
+    }
+    
+    private func buildRecipe(_ state: InsertMenuFeature.State) -> OpenAIRecipe {
+        let totalCost: Int = state.steps.reduce(0) {
+            $0 + (Int($1.timeCost ?? "") ?? 0)
+        }
+        return .init(
+            name: state.recipeName,
+            category: state.selectedCategory,
+            ingredients: state.recipeIngredients.components(separatedBy: " "),
+            totalCost: "\(totalCost)",
+            steps: ["0": state.steps]
+        )
     }
 }
 

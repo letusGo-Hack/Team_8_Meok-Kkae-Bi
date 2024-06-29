@@ -48,6 +48,11 @@ struct HomeFeature {
             case .insertMenu(.presented(.cancelButtonTapped)):
                 state.insertMenu = nil
                 return .none
+            // 레시피 추가 화면 닫기 이벤트
+            case let .insertMenu(.presented(.completeButtonTapped(recipe))):
+                state.menus.append(recipe)
+                state.insertMenu = nil
+                return .none
             case .insertMenu:
                 return .none
                 
