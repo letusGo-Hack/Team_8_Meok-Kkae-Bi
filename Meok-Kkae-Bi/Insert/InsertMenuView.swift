@@ -45,7 +45,7 @@ struct InsertMenuView: View {
                         Group {
                             Text("재료")
                                 .font(.headline)
-                            TextField("레시피 재료를 입력하세요.", text: viewStore.binding(
+                            TextField("레시피 재료를 입력하세요. (띄어쓰기로 구분해주세요)", text: viewStore.binding(
                                 get: \.recipeIngredients,
                                 send: { InsertMenuFeature.Action.setRecipeIngredients($0) }
                             ))
