@@ -87,15 +87,7 @@ struct HomeView: View {
     HomeView(store:
         Store(
             initialState: HomeFeature.State(
-                menus: [
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                ]
+                menus: Array(repeating: OpenAIRecipe.stub, count: 30)
             )
         ) {
             HomeFeature()

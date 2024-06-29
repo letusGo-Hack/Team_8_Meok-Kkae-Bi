@@ -33,15 +33,7 @@ struct HomeFeature {
                 
             // 데이터 첫 로드
             case .onAppear:
-                state.menus = [
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                    OpenAIRecipe(name: "test", category: "test", ingredients: [], totalCost: 10, steps: [], image: nil),
-                ]
+                state.menus = [OpenAIRecipe.stub]
                 return .none
                 
             // GPT 버튼 클릭 이벤트
