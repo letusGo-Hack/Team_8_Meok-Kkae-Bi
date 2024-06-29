@@ -94,7 +94,7 @@ struct InsertMenuFeature {
                 let newStep = OpenAIRecipeStep(
                     ingredient: state.newStepIngredient,
                     action: state.newStepDescription,
-                    timeCost: state.newStepTime,
+                    timeCost: state.newStepTime.isEmpty ? "15" : state.newStepTime,
                     fireLevel: nil
                 )
                 state.steps.append(newStep)
