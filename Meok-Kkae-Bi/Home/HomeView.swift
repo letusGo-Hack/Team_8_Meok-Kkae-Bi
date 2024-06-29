@@ -5,8 +5,11 @@
 //  Created by najin on 6/29/24.
 //
 
-import SwiftUI
 import ComposableArchitecture
+
+import ActivityKit
+import SwiftUI
+import WidgetKit
 
 struct HomeView: View {
     @Bindable var store: StoreOf<HomeFeature>
@@ -52,18 +55,33 @@ struct HomeView: View {
                                     .frame(maxWidth: .infinity)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                             }
+                            
+                            Button(
+                                action: {
+                                    let attributes = MeokWidgetAttributes(name: "MUK")
+                                    let contentState = MeokWidgetAttributes.ContentState(emoji: "🚧")
+                                    
+                                    do {
+                                        let activity = try Activity<MeokWidgetAttributes>.request(
+                                            attributes: attributes,
+                                            contentState: contentState
+                                        )
+                                    print(activity)
+                                }
+                                catch {
+                                    print(error)
+                                }
+                            }) {
+                                Text("DynamicIsland!")
+                            }
+                            
+                            Text("추가하기")
+                                .onTapGesture {
+                                    viewStore.send(.addButtonTapped)
+                                }
                         }
-
                     }
                 }
-                
-//                Text("추가하기")
-//                    .onTapGesture {
-//                        viewStore.send(.addButtonTapped)
-//                    }
-            }
-            .task {
-                store.send(.onAppear)
             }
             .fullScreenCover(
                 item: $store.scope(state: \.insertMenu, action: \.insertMenu)

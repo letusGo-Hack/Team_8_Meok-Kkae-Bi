@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,11 @@
 		029E46822C2FD021008984DF /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46812C2FD021008984DF /* ChatTests.swift */; };
 		029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46852C2FD0B8008984DF /* RecipeRetriever.swift */; };
 		029E46892C2FD92B008984DF /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 029E46882C2FD92B008984DF /* OpenAI */; };
-		3139070D2C2FFDBB0068324F /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139070C2C2FFDB90068324F /* CategoryType.swift */; };
-		31BAE2922C2FEBFF00426EF1 /* CookActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAE2912C2FEBFD00426EF1 /* CookActionType.swift */; };
+		313907162C3002880068324F /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907142C3002880068324F /* CategoryType.swift */; };
+		313907172C3002880068324F /* CookActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907152C3002880068324F /* CookActionType.swift */; };
+		313907182C3002880068324F /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907142C3002880068324F /* CategoryType.swift */; };
+		313907192C3002880068324F /* CookActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907152C3002880068324F /* CookActionType.swift */; };
+		6094DCC92C2FDD1B00C51467 /* MeokWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B0F2C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift */; };
 		609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */; };
 		609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */; };
 		609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3ACC2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift */; };
@@ -72,8 +75,8 @@
 		029E467F2C2FCFEB008984DF /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		029E46812C2FD021008984DF /* ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTests.swift; sourceTree = "<group>"; };
 		029E46852C2FD0B8008984DF /* RecipeRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRetriever.swift; sourceTree = "<group>"; };
-		3139070C2C2FFDB90068324F /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
-		31BAE2912C2FEBFD00426EF1 /* CookActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookActionType.swift; sourceTree = "<group>"; };
+		313907142C3002880068324F /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		313907152C3002880068324F /* CookActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookActionType.swift; sourceTree = "<group>"; };
 		6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeokWidgetExtension.entitlements; sourceTree = "<group>"; };
 		6021906D2C2FBC2400EE8AC3 /* Meok-Kkae-Bi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Meok-Kkae-Bi.entitlements"; sourceTree = "<group>"; };
 		609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meok-Kkae-Bi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +106,11 @@
 		FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuFeature.swift; sourceTree = "<group>"; };
 		FDBE0A3B2C2FC60800907ACE /* DetailMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		607454E42C2FF35600EAA093 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
+		6094DCCA2C2FE49700C51467 /* AddView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AddView; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		609F3AB32C2F9A0A002CD704 /* Frameworks */ = {
@@ -168,6 +176,7 @@
 		609F3AB82C2F9A0B002CD704 /* Meok-Kkae-Bi */ = {
 			isa = PBXGroup;
 			children = (
+				607454E42C2FF35600EAA093 /* Util */,
 				FDB624572C2FD8310034F867 /* Extensions */,
 				029E46842C2FD0A7008984DF /* Recipe */,
 				FDBE0A392C2FC60100907ACE /* Detail */,
@@ -267,6 +276,7 @@
 		FDBE0A342C2FC5F800907ACE /* Insert */ = {
 			isa = PBXGroup;
 			children = (
+				6094DCCA2C2FE49700C51467 /* AddView */,
 				FDBE0A352C2FC5FF00907ACE /* InsertMenuFeature.swift */,
 				FDBE0A362C2FC5FF00907ACE /* InsertMenuView.swift */,
 			);
@@ -276,8 +286,8 @@
 		FDBE0A392C2FC60100907ACE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				3139070C2C2FFDB90068324F /* CategoryType.swift */,
-				31BAE2912C2FEBFD00426EF1 /* CookActionType.swift */,
+				313907142C3002880068324F /* CategoryType.swift */,
+				313907152C3002880068324F /* CookActionType.swift */,
 				FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */,
 				FDBE0A3B2C2FC60800907ACE /* DetailMenuView.swift */,
 			);
@@ -426,12 +436,13 @@
 			files = (
 				029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */,
 				FDB624592C2FD83F0034F867 /* Color+Extension.swift in Sources */,
+				6094DCC92C2FDD1B00C51467 /* MeokWidgetLiveActivity.swift in Sources */,
 				FDBE0A372C2FC5FF00907ACE /* InsertMenuView.swift in Sources */,
+				313907182C3002880068324F /* CategoryType.swift in Sources */,
+				313907192C3002880068324F /* CookActionType.swift in Sources */,
 				FDBE0A382C2FC5FF00907ACE /* InsertMenuFeature.swift in Sources */,
 				FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */,
 				FDBE0A3D2C2FC60800907ACE /* DetailMenuView.swift in Sources */,
-				31BAE2922C2FEBFF00426EF1 /* CookActionType.swift in Sources */,
-				3139070D2C2FFDBB0068324F /* CategoryType.swift in Sources */,
 				FDB6245C2C2FDC8C0034F867 /* MenuCell.swift in Sources */,
 				FDBE0A322C2FC5F600907ACE /* HomeView.swift in Sources */,
 				FDBE0A332C2FC5F600907ACE /* HomeFeature.swift in Sources */,
@@ -444,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */,
+				313907162C3002880068324F /* CategoryType.swift in Sources */,
+				313907172C3002880068324F /* CookActionType.swift in Sources */,
 				029E46822C2FD021008984DF /* ChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,7 +630,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,7 +668,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
