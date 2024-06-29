@@ -46,13 +46,15 @@ class OpenAIRecipeStep: Codable {
     }
 }
 
+extension OpenAIRecipeStep: Hashable {}
+
 @Model
 class OpenAIRecipe: Codable {
     var name: String
     var category: String
     var ingredients: [String]
     var totalCost: String
-    var steps: [String:[OpenAIRecipeStep]]
+    var steps: [String: [OpenAIRecipeStep]]
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -76,7 +78,7 @@ class OpenAIRecipe: Codable {
         category = try values.decode(String.self, forKey: .category)
         ingredients = try values.decode([String].self, forKey: .ingredients)
         totalCost = try values.decode(String.self, forKey: .totalCost)
-        steps = try values.decode([String:[OpenAIRecipeStep]].self, forKey: .steps)
+        steps = try values.decode([String: [OpenAIRecipeStep]].self, forKey: .steps)
     }
     
     func encode(to encoder: any Encoder) throws {
@@ -88,8 +90,9 @@ class OpenAIRecipe: Codable {
 
         try container.encode(steps, forKey: .steps)
     }
-    
 }
+
+extension OpenAIRecipe: Hashable {}
 
 extension OpenAIRecipe {
     static var stub: OpenAIRecipe {
