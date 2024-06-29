@@ -29,9 +29,9 @@ struct InsertMenuFeature {
         Reduce { state, action in
             switch action {
             case .requestRecipe:
-                Task {
-                    let result = try await self.recipeRetriever.getRecipe()
-                }
+//                Task {
+//                    let result = try await self.recipeRetriever.getRecipe()
+//                }
                 return .none
             default:
                 return .none

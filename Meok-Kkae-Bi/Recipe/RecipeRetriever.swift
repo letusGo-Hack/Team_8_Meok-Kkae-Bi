@@ -34,7 +34,11 @@ struct OpenAIRecipeStep: Codable, Sendable {
     let timeCost: Int
 }
 
-struct OpenAIRecipe: Codable, Sendable {
+struct OpenAIRecipe: Codable, Sendable, Equatable {
+    static func == (lhs: OpenAIRecipe, rhs: OpenAIRecipe) -> Bool {
+        return true
+    }
+    
     let name: String
     let category: String
     let ingredients: [String]
@@ -46,26 +50,26 @@ struct OpenAIRecipe: Codable, Sendable {
 
 class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
     var session: URLSession!
-    let apiKey: String
+//    let apiKey: String
     let host: String = "https://api.openai.com/"
     
     override init() {
-        let openAiApiKey = Bundle.main.object(forInfoDictionaryKey: "OPEN_AI_API_KEY") as! String
-        self.apiKey = openAiApiKey
+//        let openAiApiKey = Bundle.main.object(forInfoDictionaryKey: "OPEN_AI_API_KEY") as! String
+//        self.apiKey = openAiApiKey
         
-        super.init()
+//        super.init()
         
-        self.initSession()
+//        self.initSession()
     }
     
     func initSession() {
-        let urlsessionConfiguration = URLSessionConfiguration.default
-        urlsessionConfiguration.httpAdditionalHeaders = [
-            "Authorization": "Bearer \(self.apiKey)",
-            "Content-Type": "application/json"
-        ]
-        
-        self.session = URLSession(configuration: urlsessionConfiguration, delegate: self, delegateQueue: nil)
+//        let urlsessionConfiguration = URLSessionConfiguration.default
+//        urlsessionConfiguration.httpAdditionalHeaders = [
+//            "Authorization": "Bearer \(self.apiKey)",
+//            "Content-Type": "application/json"
+//        ]
+//        
+//        self.session = URLSession(configuration: urlsessionConfiguration, delegate: self, delegateQueue: nil)
     }
     
     func getRecipe() async throws -> String {
