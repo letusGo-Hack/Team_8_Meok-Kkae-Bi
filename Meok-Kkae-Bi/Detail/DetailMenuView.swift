@@ -15,10 +15,18 @@ struct DetailMenuView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             
             GeometryReader { geometry in
+                Rectangle()
+                    .foregroundColor(._mainColor)
+                    .frame(width: geometry.size.width, height: geometry.size.height / 3)
+                    .clipShape(CustomRoundedCorners(radius: 15, corners: [.bottomLeft, .bottomRight]))
+                    .shadow(radius: 5)
+                
+                Spacer().frame(height: 25)
+                
                 VStack {
+                    Spacer().frame(width: 24)
+                    
                     HStack {
-                        Spacer().frame(width: 24)
-                        
                         Text(viewStore.menu.name)
                             .font(.system(size: 30, weight: .bold))
                             .multilineTextAlignment(.center)
@@ -35,33 +43,19 @@ struct DetailMenuView: View {
                                 .foregroundColor(.yellow)
                         }
                     }
-                    .padding()
                     
                     Spacer().frame(height: 30)
                     
                     let foodType = CategoryType.create(value: viewStore.menu.category)
                     getImageLayer(image: foodType.image, superWidth: geometry.size.width)
-                }
-                
-                Spacer().frame(height: 30)
-                
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("소스 준비")
-                        .font(.headline)
-                        .foregroundColor(.black)
-                        .padding(.bottom, 8)
                     
-                    Text("Steps")
-                        .font(.headline)
-                        .padding(.bottom, 8)
+                    Spacer().frame(height: 30)
                     
 //                    getRecipeListLayer(list: viewStore.menu.)
                     getRecipeListLayer(list: TestData.createMockData().steps)
-                }
-                
-                Spacer()
-                
-                VStack {
+                    
+                    Spacer().frame(height: 30)
+                    
                     HStack {
                         Button(action: {
                             viewStore.send(.startButtonTapped)
@@ -128,6 +122,21 @@ struct DetailMenuView: View {
     }
     
 }
+
+struct CustomRoundedCorners: Shape {
+    var radius: CGFloat
+    var corners: UIRectCorner
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        return Path(path.cgPath)
+    }
+}
+
 
 //#Preview {
 //    DetailMenuView(store: Store(initialState: DetailMenuFeature.State(menu: OpenAIRecipe.stub)) {
