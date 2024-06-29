@@ -150,7 +150,7 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
     
     func getRecipe(recipeName: String) async throws -> Result<OpenAIRecipe, Error> {
         
-//        return .success(OpenAIRecipe.stub)\
+        return .success(OpenAIRecipe.stub)\
         
         let chatQuery = ChatQuery(messages: [.system(.init(content: self.defaultPrompt, name: "assistant")), .user(.init(content: .string("\(recipeName) 만드는 방법 알려줘")))], model: .gpt4_o)
 //
