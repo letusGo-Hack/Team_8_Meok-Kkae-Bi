@@ -6,19 +6,10 @@
 //
 import Foundation
 import OpenAI
+import SwiftData
 
-enum OpenAIV1EndPoint {
-    case chatCompletion
-    
-    var endpoint: String {
-        switch self {
-        case .chatCompletion:
-            return "v1/chat/completions"
-        }
-    }
-}
-
-struct OpenAIRecipeStep: Codable, Sendable {
+@Model
+class OpenAIRecipeStep: Codable {
     let ingredient: String?
     let action: String
     let timeCost: String?
