@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029E46802C2FCFEB008984DF /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029E467F2C2FCFEB008984DF /* info.plist */; };
+		029E46822C2FD021008984DF /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46812C2FD021008984DF /* ChatTests.swift */; };
+		029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46852C2FD0B8008984DF /* RecipeRetriever.swift */; };
 		609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */; };
 		609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */; };
 		609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3ACC2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift */; };
-		609F3AD72C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3AD62C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift */; };
-		609F3AD92C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3AD82C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift */; };
 		609F3B0B2C2FA1DA002CD704 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609F3B0A2C2FA1DA002CD704 /* WidgetKit.framework */; };
 		609F3B0D2C2FA1DA002CD704 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609F3B0C2C2FA1DA002CD704 /* SwiftUI.framework */; };
 		609F3B102C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B0F2C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift */; };
@@ -33,13 +34,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		609F3AC92C2F9A0C002CD704 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 609F3AAE2C2F9A0A002CD704 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 609F3AB52C2F9A0A002CD704;
-			remoteInfo = "Meok-Kkae-Bi";
-		};
-		609F3AD32C2F9A0C002CD704 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 609F3AAE2C2F9A0A002CD704 /* Project object */;
 			proxyType = 1;
@@ -70,6 +64,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		029E467F2C2FCFEB008984DF /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		029E46812C2FD021008984DF /* ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTests.swift; sourceTree = "<group>"; };
+		029E46852C2FD0B8008984DF /* RecipeRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRetriever.swift; sourceTree = "<group>"; };
 		6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeokWidgetExtension.entitlements; sourceTree = "<group>"; };
 		6021906D2C2FBC2400EE8AC3 /* Meok-Kkae-Bi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Meok-Kkae-Bi.entitlements"; sourceTree = "<group>"; };
 		609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meok-Kkae-Bi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +74,6 @@
 		609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		609F3AC82C2F9A0C002CD704 /* Meok-Kkae-BiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meok-Kkae-BiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F3ACC2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiTests.swift; sourceTree = "<group>"; };
-		609F3AD22C2F9A0C002CD704 /* Meok-Kkae-BiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meok-Kkae-BiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F3AD62C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiUITests.swift; sourceTree = "<group>"; };
 		609F3AD82C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MeokWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,13 +111,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		609F3ACF2C2F9A0C002CD704 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		609F3B052C2FA1DA002CD704 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,9 +123,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		029E46842C2FD0A7008984DF /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				029E46852C2FD0B8008984DF /* RecipeRetriever.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 		609F3AAD2C2F9A0A002CD704 = {
 			isa = PBXGroup;
 			children = (
+				029E467F2C2FCFEB008984DF /* info.plist */,
 				6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */,
 				609F3AB82C2F9A0B002CD704 /* Meok-Kkae-Bi */,
 				609F3ACB2C2F9A0C002CD704 /* Meok-Kkae-BiTests */,
@@ -152,7 +150,6 @@
 			children = (
 				609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */,
 				609F3AC82C2F9A0C002CD704 /* Meok-Kkae-BiTests.xctest */,
-				609F3AD22C2F9A0C002CD704 /* Meok-Kkae-BiUITests.xctest */,
 				609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */,
 			);
 			name = Products;
@@ -161,6 +158,7 @@
 		609F3AB82C2F9A0B002CD704 /* Meok-Kkae-Bi */ = {
 			isa = PBXGroup;
 			children = (
+				029E46842C2FD0A7008984DF /* Recipe */,
 				FDBE0A392C2FC60100907ACE /* Detail */,
 				FDBE0A342C2FC5F800907ACE /* Insert */,
 				FDBE0A2F2C2FC5EE00907ACE /* Home */,
@@ -184,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				609F3ACC2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift */,
+				029E46812C2FD021008984DF /* ChatTests.swift */,
 			);
 			path = "Meok-Kkae-BiTests";
 			sourceTree = "<group>";
@@ -298,24 +297,6 @@
 			productReference = 609F3AC82C2F9A0C002CD704 /* Meok-Kkae-BiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		609F3AD12C2F9A0C002CD704 /* Meok-Kkae-BiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 609F3AE22C2F9A0C002CD704 /* Build configuration list for PBXNativeTarget "Meok-Kkae-BiUITests" */;
-			buildPhases = (
-				609F3ACE2C2F9A0C002CD704 /* Sources */,
-				609F3ACF2C2F9A0C002CD704 /* Frameworks */,
-				609F3AD02C2F9A0C002CD704 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				609F3AD42C2F9A0C002CD704 /* PBXTargetDependency */,
-			);
-			name = "Meok-Kkae-BiUITests";
-			productName = "Meok-Kkae-BiUITests";
-			productReference = 609F3AD22C2F9A0C002CD704 /* Meok-Kkae-BiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		609F3B072C2FA1DA002CD704 /* MeokWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 609F3B222C2FA1DB002CD704 /* Build configuration list for PBXNativeTarget "MeokWidgetExtension" */;
@@ -350,10 +331,6 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 609F3AB52C2F9A0A002CD704;
 					};
-					609F3AD12C2F9A0C002CD704 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 609F3AB52C2F9A0A002CD704;
-					};
 					609F3B072C2FA1DA002CD704 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -377,7 +354,6 @@
 			targets = (
 				609F3AB52C2F9A0A002CD704 /* Meok-Kkae-Bi */,
 				609F3AC72C2F9A0C002CD704 /* Meok-Kkae-BiTests */,
-				609F3AD12C2F9A0C002CD704 /* Meok-Kkae-BiUITests */,
 				609F3B072C2FA1DA002CD704 /* MeokWidgetExtension */,
 			);
 		};
@@ -390,17 +366,11 @@
 			files = (
 				609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */,
 				609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */,
+				029E46802C2FCFEB008984DF /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		609F3AC62C2F9A0C002CD704 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		609F3AD02C2F9A0C002CD704 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */,
 				FDBE0A372C2FC5FF00907ACE /* InsertMenuView.swift in Sources */,
 				FDBE0A382C2FC5FF00907ACE /* InsertMenuFeature.swift in Sources */,
 				FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */,
@@ -437,15 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		609F3ACE2C2F9A0C002CD704 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				609F3AD72C2F9A0C002CD704 /* Meok_Kkae_BiUITests.swift in Sources */,
-				609F3AD92C2F9A0C002CD704 /* Meok_Kkae_BiUITestsLaunchTests.swift in Sources */,
+				029E46822C2FD021008984DF /* ChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,11 +431,6 @@
 			isa = PBXTargetDependency;
 			target = 609F3AB52C2F9A0A002CD704 /* Meok-Kkae-Bi */;
 			targetProxy = 609F3AC92C2F9A0C002CD704 /* PBXContainerItemProxy */;
-		};
-		609F3AD42C2F9A0C002CD704 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 609F3AB52C2F9A0A002CD704 /* Meok-Kkae-Bi */;
-			targetProxy = 609F3AD32C2F9A0C002CD704 /* PBXContainerItemProxy */;
 		};
 		609F3B1D2C2FA1DB002CD704 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -616,6 +574,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 92NGUT4BRA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -652,6 +611,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 92NGUT4BRA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -680,6 +640,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6Y9F62XV9B;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
@@ -700,6 +661,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6Y9F62XV9B;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
@@ -710,44 +672,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meok-Kkae-Bi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Meok-Kkae-Bi";
-			};
-			name = Release;
-		};
-		609F3AE32C2F9A0C002CD704 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-BiUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Meok-Kkae-Bi";
-			};
-			name = Debug;
-		};
-		609F3AE42C2F9A0C002CD704 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.letushack.Meok-Kkae-BiUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Meok-Kkae-Bi";
 			};
 			name = Release;
 		};
@@ -843,15 +767,6 @@
 			buildConfigurations = (
 				609F3AE02C2F9A0C002CD704 /* Debug */,
 				609F3AE12C2F9A0C002CD704 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		609F3AE22C2F9A0C002CD704 /* Build configuration list for PBXNativeTarget "Meok-Kkae-BiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				609F3AE32C2F9A0C002CD704 /* Debug */,
-				609F3AE42C2F9A0C002CD704 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
