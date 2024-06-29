@@ -19,6 +19,8 @@ struct InsertMenuFeature {
     enum Action {
         case cancelButtonTapped
         case requestRecipe
+        case addRecipe(recipe: OpenAIRecipe)
+        case failedToAddRecipe(errorString: String)
     }
     
     init() {
@@ -29,10 +31,15 @@ struct InsertMenuFeature {
         Reduce { state, action in
             switch action {
             case .requestRecipe:
-                Task {
-                    let result = try await self.recipeRetriever.getRecipe(input: "스파게티 만드는 방법을 알려줘")
+                return .run { send in
+                    let result = try await self.recipeRetriever.getRecipe(recipeName: "스파게티")
+                    switch result {
+                    case .success(let recipe):
+                        await send(.addRecipe(recipe: recipe))
+                    case .failure(let error):
+                        await send(.failedToAddRecipe(errorString: String(describing: error)))
+                    }
                 }
-                return .none
             default:
                 return .none
             }
