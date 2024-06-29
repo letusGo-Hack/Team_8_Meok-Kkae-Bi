@@ -9,7 +9,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct MeokWidgetAttributes: ActivityAttributes {
+public struct MeokWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var emoji: String
@@ -88,7 +88,7 @@ struct MeokWidgetLiveActivity: Widget {
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
         }
-        .supplementalActivityFamilies([.small, .medium])
+        .supplementalActivityFamilies([.small])
     }
 }
 
