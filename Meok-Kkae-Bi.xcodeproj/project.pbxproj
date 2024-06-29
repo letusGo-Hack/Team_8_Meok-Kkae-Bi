@@ -10,6 +10,7 @@
 		029E46802C2FCFEB008984DF /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029E467F2C2FCFEB008984DF /* info.plist */; };
 		029E46822C2FD021008984DF /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46812C2FD021008984DF /* ChatTests.swift */; };
 		029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46852C2FD0B8008984DF /* RecipeRetriever.swift */; };
+		029E46892C2FD92B008984DF /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 029E46882C2FD92B008984DF /* OpenAI */; };
 		609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */; };
 		609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */; };
 		609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3ACC2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift */; };
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029E46892C2FD92B008984DF /* OpenAI in Frameworks */,
 				FDBE0A402C2FC73B00907ACE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +287,7 @@
 			name = "Meok-Kkae-Bi";
 			packageProductDependencies = (
 				FDBE0A3F2C2FC73B00907ACE /* ComposableArchitecture */,
+				029E46882C2FD92B008984DF /* OpenAI */,
 			);
 			productName = "Meok-Kkae-Bi";
 			productReference = 609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */;
@@ -358,6 +361,7 @@
 			mainGroup = 609F3AAD2C2F9A0A002CD704;
 			packageReferences = (
 				FDBE0A3E2C2FC73B00907ACE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				029E46872C2FD901008984DF /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = 609F3AB72C2F9A0B002CD704 /* Products */;
 			projectDirPath = "";
@@ -799,6 +803,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		029E46872C2FD901008984DF /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.9;
+			};
+		};
 		FDBE0A3E2C2FC73B00907ACE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -810,6 +822,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		029E46882C2FD92B008984DF /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 029E46872C2FD901008984DF /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
 		FDBE0A3F2C2FC73B00907ACE /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FDBE0A3E2C2FC73B00907ACE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

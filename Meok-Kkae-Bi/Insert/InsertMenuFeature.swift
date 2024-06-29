@@ -30,7 +30,7 @@ struct InsertMenuFeature {
             switch action {
             case .requestRecipe:
                 Task {
-                    let result = try await self.recipeRetriever.getRecipe()
+                    let result = try await self.recipeRetriever.getRecipe(input: "스파게티 만드는 방법을 알려줘")
                 }
                 return .none
             default:
