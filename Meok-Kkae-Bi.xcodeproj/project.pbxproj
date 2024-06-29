@@ -15,6 +15,8 @@
 		313907172C3002880068324F /* CookActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907152C3002880068324F /* CookActionType.swift */; };
 		313907182C3002880068324F /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907142C3002880068324F /* CategoryType.swift */; };
 		313907192C3002880068324F /* CookActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313907152C3002880068324F /* CookActionType.swift */; };
+		3139071B2C3003260068324F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139071A2C3003230068324F /* TestData.swift */; };
+		3139071C2C3003260068324F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139071A2C3003230068324F /* TestData.swift */; };
 		6094DCC92C2FDD1B00C51467 /* MeokWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B0F2C2FA1DA002CD704 /* MeokWidgetLiveActivity.swift */; };
 		609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */; };
 		609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */; };
@@ -77,6 +79,7 @@
 		029E46852C2FD0B8008984DF /* RecipeRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRetriever.swift; sourceTree = "<group>"; };
 		313907142C3002880068324F /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
 		313907152C3002880068324F /* CookActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookActionType.swift; sourceTree = "<group>"; };
+		3139071A2C3003230068324F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeokWidgetExtension.entitlements; sourceTree = "<group>"; };
 		6021906D2C2FBC2400EE8AC3 /* Meok-Kkae-Bi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Meok-Kkae-Bi.entitlements"; sourceTree = "<group>"; };
 		609F3AB62C2F9A0B002CD704 /* Meok-Kkae-Bi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meok-Kkae-Bi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,6 +289,7 @@
 		FDBE0A392C2FC60100907ACE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				3139071A2C3003230068324F /* TestData.swift */,
 				313907142C3002880068324F /* CategoryType.swift */,
 				313907152C3002880068324F /* CookActionType.swift */,
 				FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */,
@@ -439,6 +443,7 @@
 				6094DCC92C2FDD1B00C51467 /* MeokWidgetLiveActivity.swift in Sources */,
 				FDBE0A372C2FC5FF00907ACE /* InsertMenuView.swift in Sources */,
 				313907182C3002880068324F /* CategoryType.swift in Sources */,
+				3139071B2C3003260068324F /* TestData.swift in Sources */,
 				313907192C3002880068324F /* CookActionType.swift in Sources */,
 				FDBE0A382C2FC5FF00907ACE /* InsertMenuFeature.swift in Sources */,
 				FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */,
@@ -457,6 +462,7 @@
 				609F3ACD2C2F9A0C002CD704 /* Meok_Kkae_BiTests.swift in Sources */,
 				313907162C3002880068324F /* CategoryType.swift in Sources */,
 				313907172C3002880068324F /* CookActionType.swift in Sources */,
+				3139071C2C3003260068324F /* TestData.swift in Sources */,
 				029E46822C2FD021008984DF /* ChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

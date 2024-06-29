@@ -55,7 +55,8 @@ struct DetailMenuView: View {
                         .font(.headline)
                         .padding(.bottom, 8)
                     
-                    getRecipeListLayer(list: viewStore.menu)
+//                    getRecipeListLayer(list: viewStore.menu.)
+                    getRecipeListLayer(list: TestData.createMockData().steps)
                 }
                 
                 Spacer()
@@ -96,11 +97,11 @@ struct DetailMenuView: View {
     }
     
     @ViewBuilder
-    private func getRecipeListLayer(list: OpenAIRecipe) -> some View {
+    private func getRecipeListLayer(list: [OpenAIRecipeStep]) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(list, id: \.self) { recipeStep in
                 HStack {
-                    let image = CookActionType.getCookActionType(value: recipeStep).image
+                    let image = CookActionType.getCookActionType(value: recipeStep.action).image
                     
                     Image(uiImage: image)
                         .resizable()
@@ -110,7 +111,7 @@ struct DetailMenuView: View {
                     
                     Spacer()
                     
-                    Text(recipeStep.timeCost)
+                    Text(recipeStep.timeCost ?? "")
                     
                     Spacer()
                     
