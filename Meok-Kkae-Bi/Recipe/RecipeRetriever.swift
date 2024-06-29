@@ -23,15 +23,81 @@ struct OpenAIRecipeStep: Codable, Sendable {
     let action: String
     let timeCost: String?
     let fireLevel: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case ingredient
+        case action
+        case timeCost
+        case fireLevel
+    }
+    
+    init(ingredient: String?, action: String, timeCost: String?, fireLevel: String?) {
+        self.ingredient = ingredient
+        self.action = action
+        self.timeCost = timeCost
+        self.fireLevel = fireLevel
+    }
+    
+    required init(from decoder: any Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        ingredient = try values.decodeIfPresent(String.self, forKey: .ingredient)
+        action = try values.decode(String.self, forKey: .action)
+        timeCost = try values.decodeIfPresent(String.self, forKey: .timeCost)
+        fireLevel = try values.decodeIfPresent(String.self, forKey: .fireLevel)
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(ingredient, forKey: .ingredient)
+        try container.encode(action, forKey: .action)
+        try container.encode(timeCost, forKey: .action)
+        try container.encode(fireLevel, forKey: .action)
+    }
 }
 
-struct OpenAIRecipe: Codable, Sendable {
-    let name: String
-    let category: String
-    let ingredients: [String]
-    let totalCost: String
-    let steps: [String:[OpenAIRecipeStep]]
-    let image: Data?
+@Model
+class OpenAIRecipe: Codable {
+    var name: String
+    var category: String
+    var ingredients: [String]
+    var totalCost: String
+    var steps: [String:[OpenAIRecipeStep]]
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case category
+        case ingredients
+        case totalCost
+        case steps
+    }
+    
+    init(name: String, category: String, ingredients: [String], totalCost: String, steps: [String : [OpenAIRecipeStep]]) {
+        self.name = name
+        self.category = category
+        self.ingredients = ingredients
+        self.totalCost = totalCost
+        self.steps = steps
+    }
+    
+    required init(from decoder: any Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decode(String.self, forKey: .name)
+        category = try values.decode(String.self, forKey: .category)
+        ingredients = try values.decode([String].self, forKey: .ingredients)
+        totalCost = try values.decode(String.self, forKey: .totalCost)
+        steps = try values.decode([String:[OpenAIRecipeStep]].self, forKey: .steps)
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(category, forKey: .category)
+        try container.encode(totalCost, forKey: .totalCost)
+        try container.encode(ingredients, forKey: .ingredients)
+
+        try container.encode(steps, forKey: .steps)
+    }
+    
 }
 
 extension OpenAIRecipe {
