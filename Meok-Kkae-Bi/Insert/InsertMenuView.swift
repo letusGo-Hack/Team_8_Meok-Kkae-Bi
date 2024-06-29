@@ -17,6 +17,10 @@ struct InsertMenuView: View {
                 .onTapGesture {
                     viewStore.send(.cancelButtonTapped)
                 }
+            Text("메뉴요청하기")
+                .onTapGesture {
+                    viewStore.send(.requestRecipe)
+                }
         }
     }
 }
