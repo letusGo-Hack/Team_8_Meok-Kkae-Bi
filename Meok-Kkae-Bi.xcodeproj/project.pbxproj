@@ -11,6 +11,7 @@
 		029E46822C2FD021008984DF /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46812C2FD021008984DF /* ChatTests.swift */; };
 		029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E46852C2FD0B8008984DF /* RecipeRetriever.swift */; };
 		029E46892C2FD92B008984DF /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 029E46882C2FD92B008984DF /* OpenAI */; };
+		3139070D2C2FFDBB0068324F /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139070C2C2FFDB90068324F /* CategoryType.swift */; };
 		31BAE2922C2FEBFF00426EF1 /* CookActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAE2912C2FEBFD00426EF1 /* CookActionType.swift */; };
 		609F3AC02C2F9A0C002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3ABF2C2F9A0C002CD704 /* Assets.xcassets */; };
 		609F3AC32C2F9A0C002CD704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3AC22C2F9A0C002CD704 /* Preview Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		029E467F2C2FCFEB008984DF /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		029E46812C2FD021008984DF /* ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTests.swift; sourceTree = "<group>"; };
 		029E46852C2FD0B8008984DF /* RecipeRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRetriever.swift; sourceTree = "<group>"; };
+		3139070C2C2FFDB90068324F /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
 		31BAE2912C2FEBFD00426EF1 /* CookActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookActionType.swift; sourceTree = "<group>"; };
 		6021906C2C2FBC1200EE8AC3 /* MeokWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeokWidgetExtension.entitlements; sourceTree = "<group>"; };
 		6021906D2C2FBC2400EE8AC3 /* Meok-Kkae-Bi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Meok-Kkae-Bi.entitlements"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		FDBE0A392C2FC60100907ACE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				3139070C2C2FFDB90068324F /* CategoryType.swift */,
 				31BAE2912C2FEBFD00426EF1 /* CookActionType.swift */,
 				FDBE0A3A2C2FC60800907ACE /* DetailMenuFeature.swift */,
 				FDBE0A3B2C2FC60800907ACE /* DetailMenuView.swift */,
@@ -428,6 +431,7 @@
 				FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */,
 				FDBE0A3D2C2FC60800907ACE /* DetailMenuView.swift in Sources */,
 				31BAE2922C2FEBFF00426EF1 /* CookActionType.swift in Sources */,
+				3139070D2C2FFDBB0068324F /* CategoryType.swift in Sources */,
 				FDB6245C2C2FDC8C0034F867 /* MenuCell.swift in Sources */,
 				FDBE0A322C2FC5F600907ACE /* HomeView.swift in Sources */,
 				FDBE0A332C2FC5F600907ACE /* HomeFeature.swift in Sources */,
