@@ -138,7 +138,7 @@ class OpenAIRecipeRetriever: NSObject, URLSessionDelegate {
     override init() {
         let openAiApiKey = Bundle.main.object(forInfoDictionaryKey: "OPEN_AI_API_KEY") as? String
         
-        super.init()
+//        super.init()
         
         if let openAiApiKey = openAiApiKey {
             self.openAI = OpenAI(apiToken: openAiApiKey)
