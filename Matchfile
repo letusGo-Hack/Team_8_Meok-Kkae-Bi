@@ -6,6 +6,7 @@ type("development") # The default type, can be: appstore, adhoc, enterprise or d
 
 app_identifier(["kr.letushack.Meok-Kkae-Bi"])
 username("qkwl4678@naver.com") # Your Apple Developer Portal username
+team_id("92NGUT4BRA") # Developer Portal Team ID
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options
