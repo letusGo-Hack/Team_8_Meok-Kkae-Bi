@@ -22,6 +22,7 @@
 		609F3B182C2FA1DA002CD704 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F3B172C2FA1DA002CD704 /* AppIntent.swift */; };
 		609F3B1A2C2FA1DB002CD704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F3B192C2FA1DB002CD704 /* Assets.xcassets */; };
 		609F3B1E2C2FA1DB002CD704 /* MeokWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 609F3B082C2FA1DA002CD704 /* MeokWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FDB624592C2FD83F0034F867 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB624582C2FD83F0034F867 /* Color+Extension.swift */; };
 		FDBE0A2E2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A2D2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift */; };
 		FDBE0A322C2FC5F600907ACE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A312C2FC5F600907ACE /* HomeView.swift */; };
 		FDBE0A332C2FC5F600907ACE /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE0A302C2FC5F600907ACE /* HomeFeature.swift */; };
@@ -86,6 +87,7 @@
 		609F3B172C2FA1DA002CD704 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		609F3B192C2FA1DB002CD704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		609F3B1B2C2FA1DB002CD704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDB624582C2FD83F0034F867 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		FDBE0A2D2C2FC5DE00907ACE /* Meok_Kkae_BiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meok_Kkae_BiApp.swift; sourceTree = "<group>"; };
 		FDBE0A302C2FC5F600907ACE /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		FDBE0A312C2FC5F600907ACE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		609F3AB82C2F9A0B002CD704 /* Meok-Kkae-Bi */ = {
 			isa = PBXGroup;
 			children = (
+				FDB624572C2FD8310034F867 /* Extensions */,
 				029E46842C2FD0A7008984DF /* Recipe */,
 				FDBE0A392C2FC60100907ACE /* Detail */,
 				FDBE0A342C2FC5F800907ACE /* Insert */,
@@ -217,6 +220,14 @@
 				609F3B1B2C2FA1DB002CD704 /* Info.plist */,
 			);
 			path = MeokWidget;
+			sourceTree = "<group>";
+		};
+		FDB624572C2FD8310034F867 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDB624582C2FD83F0034F867 /* Color+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FDBE0A2C2C2FC5D500907ACE /* App */ = {
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029E46862C2FD0BC008984DF /* RecipeRetriever.swift in Sources */,
+				FDB624592C2FD83F0034F867 /* Color+Extension.swift in Sources */,
 				FDBE0A372C2FC5FF00907ACE /* InsertMenuView.swift in Sources */,
 				FDBE0A382C2FC5FF00907ACE /* InsertMenuFeature.swift in Sources */,
 				FDBE0A3C2C2FC60800907ACE /* DetailMenuFeature.swift in Sources */,
