@@ -11,11 +11,6 @@ struct MenuCell: View {
     var menu: OpenAIRecipe
     
     var body: some View {
-//        Button {
-//        } label: {
-//            
-//        }
-//        .buttonStyle(MenuCellStyle())
         VStack {
             HStack {
                 Image("")
@@ -26,16 +21,18 @@ struct MenuCell: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(menu.name)
-                            .font(Font.headline.weight(.bold))
+                            .font(.system(size: 20, weight: .bold))
                             .lineLimit(1)
                         Spacer()
                         Text("\(menu.totalCost)")
+                            .font(.system(size: 18))
                             .foregroundColor(Color.gray)
                     }
                     
                     Text(menu.ingredients.joined(separator: " "))
+                        .font(.system(size: 13))
                         .padding(.top, 5)
-                        .lineLimit(2)
+                        .lineLimit(3)
                 }
             }
             .frame(height: 100)
@@ -53,5 +50,5 @@ struct MenuCell: View {
 }
 
 #Preview {
-    MenuCell(menu: OpenAIRecipe(name: "토마토 파스타", category: "test", ingredients: ["토마토 소스", "바질", "후추", "파마산", "치즈"], totalCost: 22, steps: [], image: nil))
+    MenuCell(menu: OpenAIRecipe.stub)
 }
