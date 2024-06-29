@@ -1,5 +1,5 @@
 //
-//  Untitled.swift
+//  CookActionType.swift
 //  Meok-Kkae-Bi
 //
 //  Created by DY on 6/29/24.

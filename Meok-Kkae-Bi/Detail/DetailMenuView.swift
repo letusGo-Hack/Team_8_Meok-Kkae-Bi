@@ -39,21 +39,8 @@ struct DetailMenuView: View {
                     
                     Spacer().frame(height: 30)
                     
-                    var image: UIImage = . imgCookNodata
-                    if let imageData = viewStore.menu.image {
-                        let image = UIImage(data: imageData)
-                    }
-                    
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: geometry.size.width - 38, height: geometry.size.width - 38)
-                        .clipped()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.white, lineWidth: 10)
-                        )
-                        .padding()
+                    let foodType = CategoryType.create(value: viewStore.menu.category)
+                    getImageLayer(image: foodType.image, superWidth: geometry.size.width)
                 }
                 
                 Spacer().frame(height: 30)
@@ -68,55 +55,77 @@ struct DetailMenuView: View {
                         .font(.headline)
                         .padding(.bottom, 8)
                     
-                    VStack(alignment: .leading, spacing: 10) {
-                        ForEach(viewStore.menu.steps, id: \.self) { recipeStep in
-                            HStack {
-                                let image = CookActionType.getCookActionType(value: recipeStep action).image
-                                
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 25, height: 25)
-                                    .clipped()
-                                
-                                Spacer()
-                                
-                                Text(recipeStep.timeCost)
-                                
-                                Spacer()
-                                
-                                Text(recipeStep.ingredient ?? "재료 없음" + recipeStep.action)
-                                    .padding(.vertical, 4)
-                                
-                                Spacer()
-                            }
-                        }
-                    }
-                    .padding()
-                    .background(Color(#colorLiteral(red: 1.0, green: 0.89, blue: 0.74, alpha: 1.0)))
-                    .cornerRadius(10)
+                    getRecipeListLayer(list: viewStore.menu)
                 }
                 
                 Spacer()
                 
-//                VStack {
-//                    HStack {
-//                        Button(action: {
-//                            viewStore.send(.startButtonTapped)
-//                        }) {
-//                            Text("시작하기!")
-//                                .font(.system(size: 24, weight: .bold))
-//                                .multilineTextAlignment(.center)
-//                                .foregroundColor(.white)
-//                        }
-//                        .background(._mainColor)
-//                        .cornerRadius(15)
-//                    }
-//                }
-//                .padding()
+                VStack {
+                    HStack {
+                        Button(action: {
+                            viewStore.send(.startButtonTapped)
+                        }) {
+                            Text("시작하기!")
+                                .font(.system(size: 24, weight: .bold))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
+                        .foregroundColor(._mainColor)
+                        .cornerRadius(15)
+                    }
+                }
+                .padding()
             }
         }
     }
+    
+    @ViewBuilder
+    private func getImageLayer(image: UIImage?, superWidth: CGFloat) -> some View {
+        let imageExist: UIImage = (image == nil ? .imgCookNodata : image) ?? .imgCookNodata
+        
+        Image(uiImage: imageExist)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: superWidth - 38, height: superWidth - 38)
+            .clipped()
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 10)
+            )
+            .padding()
+    }
+    
+    @ViewBuilder
+    private func getRecipeListLayer(list: OpenAIRecipe) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(list, id: \.self) { recipeStep in
+                HStack {
+                    let image = CookActionType.getCookActionType(value: recipeStep).image
+                    
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .clipped()
+                    
+                    Spacer()
+                    
+                    Text(recipeStep.timeCost)
+                    
+                    Spacer()
+                    
+                    Text(recipeStep.ingredient ?? "재료 없음" + recipeStep.action)
+                        .padding(.vertical, 4)
+                    
+                    Spacer()
+                }
+            }
+        }
+        .padding()
+        .background(Color(#colorLiteral(red: 1.0, green: 0.89, blue: 0.74, alpha: 1.0)))
+        .cornerRadius(10)
+    }
+    
 }
 
 //#Preview {
