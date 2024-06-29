@@ -13,63 +13,65 @@ struct DetailMenuView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            
             GeometryReader { geometry in
-                Rectangle()
-                    .foregroundColor(._mainColor)
-                    .frame(width: geometry.size.width, height: geometry.size.height / 3)
-                    .clipShape(CustomRoundedCorners(radius: 15, corners: [.bottomLeft, .bottomRight]))
-                    .shadow(radius: 5)
                 
-                Spacer().frame(height: 25)
-                
-                VStack {
-                    Spacer().frame(width: 24)
+                ScrollView {
+                    Rectangle()
+                        .foregroundColor(._mainColor)
+                        .frame(width: geometry.size.width, height: geometry.size.height / 3)
+                        .clipShape(CustomRoundedCorners(radius: 15, corners: [.bottomLeft, .bottomRight]))
+                        .shadow(radius: 5)
                     
-                    HStack {
-                        Text(viewStore.menu.name)
-                            .font(.system(size: 30, weight: .bold))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
+                    Spacer().frame(height: 25)
+                    
+                    VStack {
+                        Spacer().frame(width: 24)
                         
-                        Spacer()
-                        
-                        Button(action: {
-                            viewStore.send(.cancelButtonTapped)
-                        }) {
-                            Image(uiImage: .imgCancel)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.yellow)
-                        }
-                    }
-                    
-                    Spacer().frame(height: 30)
-                    
-                    let foodType = CategoryType.create(value: viewStore.menu.category)
-                    getImageLayer(image: foodType.image, superWidth: geometry.size.width)
-                    
-                    Spacer().frame(height: 30)
-                    
-//                    getRecipeListLayer(list: viewStore.menu.)
-                    getRecipeListLayer(list: TestData.createMockData().steps)
-                    
-                    Spacer().frame(height: 30)
-                    
-                    HStack {
-                        Button(action: {
-                            viewStore.send(.startButtonTapped)
-                        }) {
-                            Text("시작하기!")
-                                .font(.system(size: 24, weight: .bold))
+                        HStack {
+                            Text(viewStore.menu.name)
+                                .font(.system(size: 30, weight: .bold))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                viewStore.send(.cancelButtonTapped)
+                            }) {
+                                Image(uiImage: .imgCancel)
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.yellow)
+                            }
                         }
-                        .foregroundColor(._mainColor)
-                        .cornerRadius(15)
+                        
+                        Spacer().frame(height: 30)
+                        
+                        let foodType = CategoryType.create(value: viewStore.menu.category)
+                        getImageLayer(image: foodType.image, superWidth: geometry.size.width)
+                        
+                        Spacer().frame(height: 52)
+                        
+                        // getRecipeListLayer(list: viewStore.menu.)
+                        getRecipeListLayer(list: TestData.createMockData().steps)
+                        
+                        Spacer().frame(height: 30)
+                        
+                        HStack {
+                            Button(action: {
+                                viewStore.send(.startButtonTapped)
+                            }) {
+                                Text("시작하기!")
+                                    .font(.system(size: 24, weight: .bold))
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                            }
+                            .foregroundColor(._mainColor)
+                            .cornerRadius(15)
+                        }
                     }
+                    .padding()
                 }
-                .padding()
             }
         }
     }
@@ -81,7 +83,7 @@ struct DetailMenuView: View {
         Image(uiImage: imageExist)
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: superWidth - 38, height: superWidth - 38)
+            .frame(width: superWidth - 58, height: superWidth - 58)
             .clipped()
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
@@ -93,6 +95,7 @@ struct DetailMenuView: View {
     @ViewBuilder
     private func getRecipeListLayer(list: [OpenAIRecipeStep]) -> some View {
         VStack(alignment: .leading, spacing: 10) {
+            
             ForEach(list, id: \.self) { recipeStep in
                 HStack {
                     let image = CookActionType.getCookActionType(value: recipeStep.action).image

@@ -9,28 +9,20 @@ import UIKit
 
 /// 요리 동작
 enum CookActionType: String, CaseIterable {
-    /// 완료
-    case complete
-    /// 끓이기, 조림
-    case boil
-    /// 넣기
-    case put
-    /// 튀기기
-    case fry
-    /// 자르기, 다지기
-    case chop
-    /// 삶기, 찌기
-    case steam
-    /// 볶기
-    case stirfry
-    /// 해동
-    case thaw
-    /// 오븐
-    case oven
-    /// 굽기
-    case roast
-    /// 면 건지기
-    case noodle
+    case 완료
+    case 끓이기
+    case 조림
+    case 넣기
+    case 튀기기
+    case 자르기
+    case 다지기
+    case 삶기
+    case 찌기
+    case 볶기
+    case 해동
+    case 오븐
+    case 굽기
+    case 건지기
     /// 찾을 수 없음
     case unknown
     
@@ -40,17 +32,17 @@ enum CookActionType: String, CaseIterable {
     
     var image: UIImage {
         switch self {
-        case .complete: .imgCookComplete
-        case .boil: .imgCookBoil
-        case .put: .imgCookPut
-        case .fry: .imgCookFry
-        case .chop: .imgCookChop
-        case .steam: .imgCookSteam
-        case .stirfry: .imgCookStirfry
-        case .thaw: .imgCookThaw
-        case .oven: .imgCookOven
-        case .roast: .imgCookRoast
-        case .noodle: .imgCookNoodle
+        case .완료: .imgCookComplete
+        case .끓이기, .조림: .imgCookBoil
+        case .넣기: .imgCookPut
+        case .튀기기: .imgCookFry
+        case .자르기, .다지기: .imgCookChop
+        case .삶기, .찌기: .imgCookSteam
+        case .볶기: .imgCookStirfry
+        case .해동: .imgCookThaw
+        case .오븐: .imgCookOven
+        case .굽기: .imgCookRoast
+        case .건지기: .imgCookNoodle
         case .unknown: .imgCookNodata
         }
     }

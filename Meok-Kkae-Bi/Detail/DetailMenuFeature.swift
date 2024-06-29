@@ -13,6 +13,7 @@ struct DetailMenuFeature {
     
     @ObservableState
     struct State: Equatable {
+        var boxSize: CGFloat
         var menu: OpenAIRecipe
     }
     
