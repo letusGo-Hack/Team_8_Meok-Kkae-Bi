@@ -4,7 +4,7 @@ storage_mode("git")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier(["kr.letushack.Meok-Kkae-Bi"])
+app_identifier(["kr.letushack.Meok-Kkae-Bi", "kr.letushack.Meok-Kkae-Bi.widget"])
 username("qkwl4678@naver.com") # Your Apple Developer Portal username
 team_id("92NGUT4BRA") # Developer Portal Team ID
 
