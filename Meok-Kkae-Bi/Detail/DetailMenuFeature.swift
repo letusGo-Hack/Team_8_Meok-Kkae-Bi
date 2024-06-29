@@ -12,7 +12,7 @@ struct DetailMenuFeature {
     
     @ObservableState
     struct State: Equatable {
-        var menu: String
+        var menu: OpenAIRecipe
     }
     
     enum Action {

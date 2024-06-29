@@ -13,7 +13,7 @@ struct DetailMenuView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            Text(viewStore.state.menu)
+            Text(viewStore.state.menu.name)
             Text("뒤로가기")
                 .onTapGesture {
                     viewStore.send(.cancelButtonTapped)
