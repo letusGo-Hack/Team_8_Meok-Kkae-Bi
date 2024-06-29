@@ -81,7 +81,7 @@ struct InsertMenuView: View {
                                 Button(action: {
                                     if let index = viewStore.steps.firstIndex(where: { $0 == step }) {
                                         viewStore.send(.removeStep(index))
-                                        HapticManager.instance.generateHaptic()
+//                                        HapticManager.instance.generateHaptic()
                                     }
                                 }) {
                                     Image(systemName: "xmark")
