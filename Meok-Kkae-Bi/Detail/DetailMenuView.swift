@@ -51,50 +51,54 @@ struct DetailMenuView: View {
                         .foregroundColor(.black)
                         .padding(.bottom, 8)
                     
+                    Text("Steps")
+                        .font(.headline)
+                        .padding(.bottom, 8)
+                    
                     VStack(alignment: .leading, spacing: 10) {
-                        
-                        ForEach(viewStore.state.steps, id: \.self) { step in
+                        ForEach(viewStore.steps, id: \.self) { recipeStep in
                             HStack {
-                                Image(systemName: "pot.fill")
-                                Text("- 올리브 오일 넣기")
+                                let image = CookActionType.getCookActionType(value: recipeStep.action).image
+                                
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 25, height: 25)
+                                    .clipped()
+                                
+                                Spacer()
+                                
+                                Text(viewStore.timeCost)
+                                
+                                Spacer()
+                                
+                                Text(recipeStep.ingredient ?? "재료 없음" + recipeStep.action)
+                                    .padding(.vertical, 4)
+                                
+                                Spacer()
                             }
-                            Text(step)
-                                .padding(.vertical, 4)
-                        }
-                        HStack {
-                            Image(systemName: "pot.fill")
-                            Text("- 올리브 오일 넣기")
-                            
-                        }
-                        
-                        HStack {
-                            Image(systemName: "pot.fill")
-                            Text("- 다진 마늘 넣기")
-                        }
-                        
-                        HStack {
-                            Image(systemName: "flame.fill")
-                            Text("1분 중불 볶기")
-                        }
-                        
-                        HStack {
-                            Image(systemName: "pot.fill")
-                            Text("- 다진 양파 넣기")
-                        }
-                        
-                        HStack {
-                            Image(systemName: "flame.fill")
-                            Text("9분 중불 볶기")
-                        }
-                        
-                        HStack {
-                            Image(systemName: "bell.fill")
-                            Text("- 불 끄기")
                         }
                     }
                     .padding()
                     .background(Color(#colorLiteral(red: 1.0, green: 0.89, blue: 0.74, alpha: 1.0)))
                     .cornerRadius(10)
+                }
+                
+                Spacer()
+                
+                VStack {
+                    HStack {
+                        Button(action: {
+                            viewStore.send(.startButtonTapped)
+                        }) {
+                            Text("시작하기!")
+                                .font(.system(size: 24, weight: .bold))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
+                        .background(._mainColor)
+                        .cornerRadius(15)
+                    }
                 }
                 .padding()
                 
